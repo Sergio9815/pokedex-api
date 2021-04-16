@@ -8,6 +8,16 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergio9815/pokedex-api.git"
+  },
+  "author": "Sergio Gonzalez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sergio9815/pokedex-api/issues"
+  },
+  "homepage": "https://github.com/Sergio9815/pokedex-api#readme",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
