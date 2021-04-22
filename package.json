@@ -20,10 +20,11 @@
   "homepage": "https://github.com/Sergio9815/pokedex-api#readme",
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-router": "^3.5.1"
   },
   "keywords": [
-    "fetch API", 
+    "fetch API",
     "Pokemon",
     "Vue JS",
     "Asincronismo",
