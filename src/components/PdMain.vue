@@ -10,6 +10,7 @@
         <input
           v-model="value"
           class="bar--input"
+          v-on:keyup.enter="search"
           type="text"
           placeholder="Enter the name or id of the Pokemon..."
         />
@@ -18,8 +19,13 @@
         </button>
       </div>
     </div>
-    <pd-icon style="margin-left: 100px" v-if="!url" />
-    <figure>
+    <pd-icon
+      style="margin-left: 100px"
+      v-if="!url"
+      :content="pokemonName"
+      v-tippy="{ arrow: true, theme: 'honeybee' }"
+    />
+    <figure :content="pokemonName" v-tippy="{ arrow: true, theme: 'honeybee' }">
       <img :src="url" alt="" />
     </figure>
   </article>
@@ -53,7 +59,9 @@ export default {
       api.getImage().then((character) => {
         try {
           this.url = character.sprites.other.dream_world.front_default
-          this.pokemonName = character.name
+          this.url
+            ? (this.pokemonName = character.name)
+            : (this.pokemonName = 'Charizard')
         } catch (error) {
           console.log(error)
         }
