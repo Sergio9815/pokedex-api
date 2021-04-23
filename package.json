@@ -6,7 +6,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "ls": "vue-cli-service lint && vue-cli-service serve"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,12 @@
   "homepage": "https://github.com/Sergio9815/pokedex-api#readme",
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-router": "^3.5.1",
+    "vue-tippy": "^4.10.0"
   },
   "keywords": [
-    "fetch API", 
+    "fetch API",
     "Pokemon",
     "Vue JS",
     "Asincronismo",
@@ -38,7 +41,9 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
+    "file-loader": "^6.2.0",
     "prettier": "^2.2.1",
+    "url-loader": "^4.1.1",
     "vue-template-compiler": "^2.6.11"
   }
 }
