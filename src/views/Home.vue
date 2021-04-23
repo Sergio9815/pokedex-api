@@ -21,8 +21,9 @@ export default {
 
 <style scoped>
 .main {
-  width: 100%;
+  width: 90%;
   height: 30rem;
+  margin: auto;
   display: flex;
   border-radius: 40px;
   align-items: center;

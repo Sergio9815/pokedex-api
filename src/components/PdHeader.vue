@@ -4,9 +4,11 @@
       <a @click="showMenu" href=""><i class="fas fa-bars"></i></a>
     </div>
     <div class="container__title">
-      <h1>{{ title }}</h1>
-      <h2>{{ subtitle }}</h2>
-      <h1>API</h1>
+      <router-link class="container__link" :to="{ name: 'home' }">
+        <h1>{{ title }}</h1>
+        <h2>{{ subtitle }}</h2>
+        <h1>-API</h1>
+      </router-link>
     </div>
   </div>
 </template>
@@ -53,6 +55,11 @@ a {
 
 .fas {
   font-size: 20px;
+}
+
+.container__link {
+  display: flex;
+  align-items: center;
 }
 
 .container__title {

@@ -10,29 +10,33 @@
         <input
           v-model="value"
           class="bar--input"
-          v-on:keyup.enter="search"
           type="text"
           placeholder="Enter the name or id of the Pokemon..."
         />
-        <button @click="search" class="bar--button">
+        <button @click="search(value)" class="bar--button">
           <i class="fas fa-search"></i>
         </button>
       </div>
     </div>
-    <pd-icon
-      style="margin-left: 100px"
-      v-if="!url"
+    <div v-if="!url" @click="search(pokemonName)">
+      <pd-icon
+        class="logoChar"
+        :content="pokemonName"
+        v-tippy="{ arrow: true, theme: 'honeybee' }"
+      />
+    </div>
+    <figure
+      v-if="url"
       :content="pokemonName"
       v-tippy="{ arrow: true, theme: 'honeybee' }"
-    />
-    <figure :content="pokemonName" v-tippy="{ arrow: true, theme: 'honeybee' }">
-      <img :src="url" alt="" />
+    >
+      <img :src="url" alt="" @click="search(pokemonName)" />
     </figure>
   </article>
 </template>
 
 <script>
-import PdIcon from '@/components/PdIcon3'
+import PdIcon from '@/components/PdIcon'
 import api from '@/api'
 
 export default {
@@ -40,19 +44,20 @@ export default {
   components: { PdIcon },
   data() {
     return {
-      title: 'SEARCH POKEMONS',
+      title: '¿QUIÉN ES ESE POKÉMON?',
       value: '',
       url: '',
       pokemonName: '',
     }
   },
+
   created() {
     this.getPokemon()
   },
 
   methods: {
-    search() {
-      alert(this.value)
+    search(id) {
+      this.$router.push({ name: 'pokemon', params: { id } })
     },
 
     getPokemon() {
@@ -61,7 +66,7 @@ export default {
           this.url = character.sprites.other.dream_world.front_default
           this.url
             ? (this.pokemonName = character.name)
-            : (this.pokemonName = 'Charizard')
+            : (this.pokemonName = 'charizard')
         } catch (error) {
           console.log(error)
         }
@@ -80,6 +85,7 @@ export default {
 
 img {
   width: 300px;
+  cursor: pointer;
 }
 
 h3 {
@@ -119,7 +125,7 @@ h3 {
   border: none;
   outline: none;
   font-size: 15px;
-  caret-color: #d9113a;
+  caret-color: #ffe268;
   background-color: unset;
 }
 
@@ -142,6 +148,11 @@ h3 {
 }
 
 .bar--button:hover {
-  color: #d9113a;
+  color: #ffe268;
+}
+
+.logoChar {
+  outline: none;
+  cursor: pointer;
 }
 </style>
