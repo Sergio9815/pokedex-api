@@ -29,6 +29,13 @@ export default {
   font-weight: 400;
 }
 
+@font-face {
+  font-family: 'Cantora One';
+  src: local('Cantora One'),
+    url('./assets/fonts/CantoraOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
 body {
   margin: 0;
   padding: 0;

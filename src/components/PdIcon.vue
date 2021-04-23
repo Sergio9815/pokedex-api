@@ -430,10 +430,10 @@
   }
 }
 .icon {
-  -webkit-animation: 10s rotate linear infinite;
-  animation: 10s rotate linear infinite;
+  -webkit-animation: 30s rotate linear infinite;
+  animation: 30s rotate linear infinite;
   -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  width: 250px;
+  width: 360px;
 }
 </style>
