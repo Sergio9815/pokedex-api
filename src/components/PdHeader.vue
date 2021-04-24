@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <nav class="container">
     <div class="container__menu">
       <a @click="showMenu" href=""><i class="fas fa-bars"></i></a>
     </div>
@@ -10,7 +10,7 @@
         <h1>-API</h1>
       </router-link>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>

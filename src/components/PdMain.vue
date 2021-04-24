@@ -11,66 +11,53 @@
           v-model="value"
           class="bar--input"
           type="text"
-          placeholder="Enter the name or id of the Pokemon..."
+          v-on:keyup.enter="search(value)"
+          placeholder="Enter the name or id of the Pokemon (1 - 898)..."
         />
         <button @click="search(value)" class="bar--button">
           <i class="fas fa-search"></i>
         </button>
       </div>
     </div>
-    <div v-if="!url" @click="search(pokemonName)">
+    <div v-if="!pokemon.url" @click="search(pokemon.name)">
       <pd-icon
         class="logoChar"
-        :content="pokemonName"
+        :content="pokemon.name"
         v-tippy="{ arrow: true, theme: 'honeybee' }"
       />
     </div>
     <figure
-      v-if="url"
-      :content="pokemonName"
+      v-if="pokemon.url"
+      :content="pokemon.name"
       v-tippy="{ arrow: true, theme: 'honeybee' }"
     >
-      <img :src="url" alt="" @click="search(pokemonName)" />
+      <img :src="pokemon.url" alt="" @click="search(pokemon.name)" />
     </figure>
   </article>
 </template>
 
 <script>
 import PdIcon from '@/components/PdIcon'
-import api from '@/api'
 
 export default {
   name: 'PdMain',
   components: { PdIcon },
+  props: {
+    pokemon: {
+      type: Object,
+      default: () => {},
+    },
+  },
   data() {
     return {
       title: '¿QUIÉN ES ESE POKÉMON?',
       value: '',
-      url: '',
-      pokemonName: '',
     }
   },
 
-  created() {
-    this.getPokemon()
-  },
-
   methods: {
-    search(id) {
+    search(id = this.value) {
       this.$router.push({ name: 'pokemon', params: { id } })
-    },
-
-    getPokemon() {
-      api.getImage().then((character) => {
-        try {
-          this.url = character[1]
-          this.url
-            ? (this.pokemonName = character[0])
-            : (this.pokemonName = 'charizard')
-        } catch (error) {
-          console.log(error)
-        }
-      })
     },
   },
 }
@@ -136,7 +123,7 @@ p {
 
 ::placeholder {
   color: rgba(255, 255, 255, 0.438);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .bar--button {
