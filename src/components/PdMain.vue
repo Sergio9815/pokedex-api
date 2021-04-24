@@ -3,7 +3,7 @@
     <div class="container__search">
       <h3>{{ title }}</h3>
       <p>
-        Encuentra a tus Pokémon favoritos! Es tan fácil como escribir el nombre
+        ¡Encuentra a tus Pokémon favoritos! Es tan fácil como escribir el nombre
         o número correspondiente a la Pokédex Nacional y listo. 🌟
       </p>
       <div class="container__search-bar">
@@ -63,9 +63,9 @@ export default {
     getPokemon() {
       api.getImage().then((character) => {
         try {
-          this.url = character.sprites.other.dream_world.front_default
+          this.url = character[1]
           this.url
-            ? (this.pokemonName = character.name)
+            ? (this.pokemonName = character[0])
             : (this.pokemonName = 'charizard')
         } catch (error) {
           console.log(error)
@@ -135,8 +135,8 @@ p {
 }
 
 ::placeholder {
-  color: rgba(255, 255, 255, 0.596);
-  font-size: 1em;
+  color: rgba(255, 255, 255, 0.438);
+  font-size: .9rem;
 }
 
 .bar--button {
