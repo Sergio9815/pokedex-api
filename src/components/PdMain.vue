@@ -3,8 +3,8 @@
     <div class="container__search">
       <h3>{{ title }}</h3>
       <p>
-        Encuentra a tus poekemons favoritos! Es tan fácil como escribir el
-        nombre o el número del pokemon que deseas identificar y listo. :)
+        Encuentra a tus Pokémon favoritos! Es tan fácil como escribir el nombre
+        o número correspondiente a la Pokédex Nacional y listo. 🌟
       </p>
       <div class="container__search-bar">
         <input
@@ -92,6 +92,11 @@ h3 {
   text-shadow: -3px 3px #d9113a;
   font-family: 'Cantora One', sans-serif;
   font-size: 30px;
+}
+
+p {
+  width: 80%;
+  line-height: 30px;
 }
 
 .container__search {
