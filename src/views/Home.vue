@@ -23,6 +23,7 @@ export default {
   },
   created() {
     // this.isLoading = true
+    document.title = 'PokeDex'
     api.getImage().then((character) => {
       try {
         this.pokemon.name = character[0]
@@ -47,7 +48,7 @@ export default {
   border-radius: 40px;
   align-items: center;
   justify-content: center;
-  background-color: #2833466b;
+  background-color: var(--main);
 }
 
 .main__content {

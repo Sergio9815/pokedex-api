@@ -70,13 +70,8 @@ export default {
   justify-content: space-around;
 }
 
-img {
-  width: 300px;
-  cursor: pointer;
-}
-
 h3 {
-  text-shadow: -3px 3px #d9113a;
+  text-shadow: -3px 3px var(--red);
   font-family: 'Cantora One', sans-serif;
   font-size: 30px;
 }
@@ -102,10 +97,7 @@ p {
   align-items: center;
   border-radius: 50px;
   height: 50px;
-  background-color: #283346;
-  -webkit-box-shadow: inset 3px 3px 1px #141c2a;
-  -moz-box-shadow: inset 3px 3px 1px #141c2a;
-  box-shadow: inset 3px 3px 1px #141c2a;
+  background-color: var(--background);
 }
 
 .bar--input {
@@ -113,11 +105,11 @@ p {
   height: 40px;
   margin-left: 15px;
   border-radius: 30px;
-  color: white;
+  color: var(--white);
   border: none;
   outline: none;
   font-size: 15px;
-  caret-color: #ffe268;
+  caret-color: var(--yellow);
   background-color: unset;
 }
 
@@ -128,10 +120,10 @@ p {
 
 .bar--button {
   width: 50px;
-  height: 40px;
-  border-radius: 6px;
+  height: 45px;
+  border-radius: 0 50px 50px 0;
   margin-left: -30px;
-  color: white;
+  color: var(--white);
   background-color: unset;
   cursor: pointer;
   outline: none;
@@ -140,7 +132,12 @@ p {
 }
 
 .bar--button:hover {
-  color: #ffe268;
+  color: var(--yellow);
+}
+
+img {
+  width: 300px;
+  cursor: pointer;
 }
 
 .logoChar {

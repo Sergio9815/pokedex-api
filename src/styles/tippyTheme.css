@@ -1,15 +1,15 @@
 .tippy-tooltip.honeybee-theme {
-  background-color: #ffe268;
-  border: 2px solid #ffb037;
+  background-color: var(--yellow);
+  border: 2px solid var(--orange);
   text-transform: uppercase;
   font-family: 'Cantora One', sans-serif;
   letter-spacing: 3px;
-  color: #141c2a;
+  color: var(--background);
 }
 .tippy-popper[x-placement^='top'] 
 .tippy-tooltip.honeybee-theme 
 .tippy-arrow {
-  border-top: 7px solid #ffb037;
+  border-top: 7px solid var(--orange);
 }
 .tippy-popper[x-placement^='top'] 
 .tippy-tooltip.honeybee-theme 
@@ -20,11 +20,11 @@
   left: -6px;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 6px solid #ffe268;
+  border-top: 6px solid var(--yellow);
 }
 
 .tippy-popper[x-placement^='bottom'] 
 .tippy-tooltip.honeybee-theme 
 .tippy-arrow {
-  border-bottom: 7px solid #ffb037;
+  border-bottom: 7px solid var(--orange);
 }
