@@ -15,6 +15,7 @@ export default {
 </script>
 
 <style>
+/* --- --- -- COLORS -- --- --- */
 :root {
   --red: #cc405c;
   --white: #ffff;
@@ -23,6 +24,8 @@ export default {
   --orange: #ffb94f;
   --background: #19142a;
 }
+
+/* --- --- -- LOCAL FONTS -- --- --- */
 
 @font-face {
   font-family: 'Barlow Semi Condensed';
@@ -37,6 +40,8 @@ export default {
     url('./assets/fonts/CantoraOne-Regular.ttf') format('truetype');
   font-weight: 400;
 }
+
+/* --- --- -- MAIN STYLES -- --- --- */
 
 body {
   margin: 0;
