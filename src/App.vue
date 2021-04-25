@@ -19,7 +19,8 @@ export default {
   --red: #cc405c;
   --white: #ffff;
   --main: #2b28466b;
-  --yellow: #ffea96;
+  --yellow: #ffe476;
+  --orange: #ffb94f;
   --background: #19142a;
 }
 

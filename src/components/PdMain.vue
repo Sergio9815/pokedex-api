@@ -120,8 +120,8 @@ p {
 
 .bar--button {
   width: 50px;
-  height: 40px;
-  border-radius: 6px;
+  height: 45px;
+  border-radius: 0 50px 50px 0;
   margin-left: -30px;
   color: var(--white);
   background-color: unset;
