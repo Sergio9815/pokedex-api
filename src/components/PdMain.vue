@@ -20,7 +20,7 @@
       </div>
     </div>
     <div v-if="!pokemon.url" @click="search(pokemon.name)">
-      <pd-icon
+      <pd-default-icon
         class="logoChar"
         :content="pokemon.name"
         v-tippy="{ arrow: true, theme: 'honeybee' }"
@@ -37,17 +37,18 @@
 </template>
 
 <script>
-import PdIcon from '@/components/PdIcon'
+import PdDefaultIcon from '@/components/PdDefaultIcon'
 
 export default {
   name: 'PdMain',
-  components: { PdIcon },
+  components: { PdDefaultIcon },
   props: {
     pokemon: {
       type: Object,
       default: () => {},
     },
   },
+
   data() {
     return {
       title: '¿QUIÉN ES ESE POKÉMON?',
