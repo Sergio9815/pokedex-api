@@ -50,7 +50,7 @@ export default {
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--white);
 }
 
 .fas {
@@ -70,15 +70,16 @@ a {
   letter-spacing: 3px;
   margin-left: 30px;
   /* background-color: lightgreen; */
-  font-family: 'VT323', monospace;
+  font-family: 'Cantora One', sans-serif;
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 h2 {
-  font-size: 35px;
-  color: #d9113a;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: var(--red);
 }
 </style>

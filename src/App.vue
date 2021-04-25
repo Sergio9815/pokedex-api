@@ -15,11 +15,12 @@ export default {
 </script>
 
 <style>
-@font-face {
-  font-family: 'VT323';
-  src: local('VT323'),
-    url('./assets/fonts/VT323-Regular.ttf') format('truetype');
-  font-weight: 400;
+:root {
+  --red: #cc405c;
+  --white: #ffff;
+  --main: #2b28466b;
+  --yellow: #ffea96;
+  --background: #19142a;
 }
 
 @font-face {
@@ -39,7 +40,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  background-color: #141c2a;
-  color: white;
+  background-color: var(--background);
+  color: var(--white);
 }
 </style>
