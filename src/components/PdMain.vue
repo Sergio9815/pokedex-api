@@ -20,7 +20,7 @@
       </div>
     </div>
     <div v-if="!pokemon.url" @click="search(pokemon.name)">
-      <pd-icon
+      <pd-default-icon
         class="logoChar"
         :content="pokemon.name"
         v-tippy="{ arrow: true, theme: 'honeybee' }"
@@ -37,17 +37,18 @@
 </template>
 
 <script>
-import PdIcon from '@/components/PdIcon'
+import PdDefaultIcon from '@/components/PdDefaultIcon'
 
 export default {
   name: 'PdMain',
-  components: { PdIcon },
+  components: { PdDefaultIcon },
   props: {
     pokemon: {
       type: Object,
       default: () => {},
     },
   },
+
   data() {
     return {
       title: '¿QUIÉN ES ESE POKÉMON?',
@@ -143,5 +144,42 @@ img {
 .logoChar {
   outline: none;
   cursor: pointer;
+}
+
+/* --- --- -- RESPONSIVE DESIGN -- --- --- */
+@media only screen and (max-width: 1030px) {
+  img,
+  .logoChar {
+    width: 200px;
+    height: 200px;
+    margin-top: 40px;
+  }
+
+  p {
+    width: 90%;
+  }
+
+  h3 {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .container__search {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  img,
+  .logoChar {
+    display: none;
+  }
 }
 </style>

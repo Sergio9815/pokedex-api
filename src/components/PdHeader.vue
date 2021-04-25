@@ -82,4 +82,12 @@ h2 {
   text-transform: uppercase;
   color: var(--red);
 }
+
+@media only screen and (max-width: 800px) {
+  .container__link {
+    width: 90%;
+    justify-content: center;
+    margin-right: 100px;
+  }
+}
 </style>

@@ -40,6 +40,8 @@ export default {
 </script>
 
 <style scoped>
+/* --- --- -- CONTAINER MAIN -- --- --- */
+
 .main {
   width: 90%;
   height: 30rem;
@@ -59,4 +61,20 @@ export default {
 /* .loadingBar {
   margin: auto;
 } */
+
+@media only screen and (max-width: 870px) {
+  .main {
+    height: 35rem;
+  }
+
+  .main__content {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .main__content {
+    width: 100%;
+  }
+}
 </style>
