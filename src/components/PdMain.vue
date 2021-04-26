@@ -19,13 +19,13 @@
         </button>
       </div>
     </div>
-    <div v-if="!pokemon.url" @click="search(pokemon.name)">
+    <!-- <div v-if="!pokemon.url" @click="search(pokemon.name)">
       <pd-default-icon
         class="logoChar"
         :content="pokemon.name"
         v-tippy="{ arrow: true, theme: 'honeybee' }"
       />
-    </div>
+    </div> -->
     <figure
       v-if="pokemon.url"
       :content="pokemon.name"
@@ -37,11 +37,11 @@
 </template>
 
 <script>
-import PdDefaultIcon from '@/components/PdDefaultIcon'
+// import PdDefaultIcon from '@/components/PdDefaultIcon'
 
 export default {
   name: 'PdMain',
-  components: { PdDefaultIcon },
+  // components: { PdDefaultIcon },
   props: {
     pokemon: {
       type: Object,
@@ -136,27 +136,36 @@ p {
   color: var(--yellow);
 }
 
-img {
+figure {
   width: 300px;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+img {
+  width: 100%;
+  cursor: pointer;
+}
+/* 
 .logoChar {
   outline: none;
   cursor: pointer;
-}
+} */
 
 /* --- --- -- RESPONSIVE DESIGN -- --- --- */
 @media only screen and (max-width: 1030px) {
-  img,
-  .logoChar {
-    width: 200px;
-    height: 200px;
-    margin-top: 40px;
+  .container {
+    width: 90%;
+    margin: auto;
   }
 
-  p {
-    width: 90%;
+  .container__search {
+    width: 100%;
+  }
+
+  figure {
+    width: 50%;
   }
 
   h3 {
@@ -165,21 +174,10 @@ img {
   }
 }
 
-@media only screen and (max-width: 870px) {
+@media only screen and (max-width: 800px) {
   .container {
     flex-direction: column;
-    width: 100%;
-  }
-
-  .container__search {
-    width: 90%;
-  }
-}
-
-@media only screen and (max-width: 425px) {
-  img,
-  .logoChar {
-    display: none;
+    overflow: scroll;
   }
 }
 </style>

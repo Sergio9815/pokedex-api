@@ -1,4 +1,6 @@
 const API = 'https://pokeapi.co/api/v2/pokemon/id'
+const SPRITES =
+  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/id.png'
 
 function getRandom(min, max) {
   return Math.random() * (max - min) + min
@@ -11,7 +13,9 @@ function getImage() {
     .then((response) => response.json())
     .then((response) => [
       response.name,
-      response.sprites.other.dream_world.front_default,
+      response.sprites.other.dream_world.front_default
+        ? response.sprites.other.dream_world.front_default
+        : SPRITES.replace('id', `${id}`),
     ])
 }
 
