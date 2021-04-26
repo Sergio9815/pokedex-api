@@ -177,7 +177,6 @@ img {
 @media only screen and (max-width: 800px) {
   .container {
     flex-direction: column;
-    overflow: scroll;
   }
 }
 </style>

@@ -71,7 +71,6 @@ export default {
     height: 100%;
     min-height: 35rem;
     margin-bottom: 50px;
-    overflow: scroll;
   }
 }
 </style>
