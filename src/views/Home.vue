@@ -1,9 +1,14 @@
 <template>
   <section class="main">
     <div class="main__content">
-      <!-- <bar-loader class="loadingBar" :loading="isLoading" :color="'#ffffff'" :size="100" :width="150" /> -->
-      <!-- v-if="!isLoading"  -->
-      <pd-main :pokemon="pokemon" />
+      <bar-loader
+        class="loadingBar"
+        :loading="isLoading"
+        :color="'#ffffff'"
+        :size="100"
+        :width="150"
+      />
+      <pd-main v-if="!isLoading" :pokemon="pokemon" />
     </div>
   </section>
 </template>
@@ -17,23 +22,27 @@ export default {
   components: { PdMain },
   data() {
     return {
-      // isLoading: false,
+      isLoading: false,
       pokemon: { name: '', url: '' },
     }
   },
   created() {
-    // this.isLoading = true
+    this.isLoading = true
     document.title = 'PokeDex'
-    api.getImage().then((character) => {
-      try {
-        this.pokemon.name = character[0]
-        this.pokemon.url = character[1]
-        this.pokemon.url ? this.pokemon.name : (this.pokemon.name = 'charizard')
-      } catch (error) {
-        console.log(error)
-      }
-    })
-    // .finally(() => (this.isLoading = false))
+    api
+      .getImage()
+      .then((character) => {
+        try {
+          this.pokemon.name = character[0]
+          this.pokemon.url = character[1]
+          this.pokemon.url
+            ? this.pokemon.name
+            : (this.pokemon.name = 'charizard')
+        } catch (error) {
+          console.log(error)
+        }
+      })
+      .finally(() => (this.isLoading = false))
   },
   methods: {},
 }
@@ -53,28 +62,16 @@ export default {
   background-color: var(--main);
 }
 
-.main__content {
-  width: 80%;
-  /* background-color: lightgoldenrodyellow; */
-}
-
-/* .loadingBar {
+.loadingBar {
   margin: auto;
-} */
+}
 
 @media only screen and (max-width: 870px) {
   .main {
-    height: 35rem;
-  }
-
-  .main__content {
-    width: 90%;
-  }
-}
-
-@media only screen and (max-width: 570px) {
-  .main__content {
-    width: 100%;
+    height: 100%;
+    min-height: 35rem;
+    margin-bottom: 50px;
+    overflow: scroll;
   }
 }
 </style>

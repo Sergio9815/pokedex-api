@@ -37,7 +37,6 @@ export default {
   width: 100%;
   height: 80px;
   justify-content: center;
-  /* background-color: lightcoral; */
 }
 
 .container__menu {
@@ -45,7 +44,6 @@ export default {
   align-items: center;
   justify-content: center;
   width: 50px;
-  /* background-color: lightblue; */
 }
 
 a {
@@ -69,7 +67,6 @@ a {
   justify-content: flex-start;
   letter-spacing: 3px;
   margin-left: 30px;
-  /* background-color: lightgreen; */
   font-family: 'Cantora One', sans-serif;
 }
 
@@ -81,13 +78,5 @@ h2 {
   font-size: 25px;
   text-transform: uppercase;
   color: var(--red);
-}
-
-@media only screen and (max-width: 800px) {
-  .container__link {
-    width: 90%;
-    justify-content: center;
-    margin-right: 100px;
-  }
 }
 </style>
