@@ -1,5 +1,7 @@
 <template>
-  <p class="normal">Pokémon</p>
+  <main>
+    <p class="normal">🚀 SITIO EN DESARROLLO...</p>
+  </main>
 </template>
 
 <script>
@@ -46,4 +48,19 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 35rem;
+  width: 100%;
+}
+
+p {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Josefin Sans';
+}
+</style>
