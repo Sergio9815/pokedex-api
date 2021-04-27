@@ -1,22 +1,40 @@
 <template>
-  <main>
-    <p class="normal">🚀 SITIO EN DESARROLLO...</p>
-  </main>
+  <section class="main">
+    <div class="main__content">
+      <bar-loader
+        class="loadingBar"
+        :loading="isLoading"
+        :color="'#ffffff'"
+        :size="100"
+        :width="150"
+      />
+      <pd-poke-data v-if="!isLoading" :pokemon="pokemon" />
+    </div>
+  </section>
 </template>
 
 <script>
+import PdPokeData from '@/components/PdPokeData'
+import api from '@/api'
+
 export default {
+  name: 'Pokemon',
+  components: { PdPokeData },
+
   data() {
     return {
+      isLoading: false,
+      pokemon: [],
       title: 'Pokémon | ',
       types: [
         { name: 'normal', icon: ' 🍥' },
         { name: 'fire', icon: ' 🔥' },
         { name: 'water', icon: ' 🌊' },
-        { name: 'plant', icon: ' 🌿' },
+        { name: 'grass', icon: ' 🍃' },
         { name: 'electric', icon: ' ⚡' },
         { name: 'ice', icon: ' ❄️' },
-        { name: 'fight', icon: ' 🥊' },
+        { name: 'poison', icon: ' 🧪' },
+        { name: 'fighting', icon: ' 🥊' },
         { name: 'ground', icon: ' 🟤' },
         { name: 'flying', icon: ' 🦅' },
         { name: 'psychic', icon: ' 🔮' },
@@ -28,14 +46,27 @@ export default {
         { name: 'steel', icon: ' 🔩' },
         { name: 'rock', icon: ' 🔘' },
       ],
-      pokemon: '',
       type: '',
+      pokemonName: '',
     }
   },
+
   created() {
-    this.getType('ghost')
-    this.pokemon = this.$route.params.id
-    document.title = this.title + this.pokemon + this.type
+    this.isLoading = true
+    this.pokemonName = this.$route.params.id
+
+    api
+      .getAssets(this.pokemonName)
+      .then((character) => {
+        try {
+          this.pokemon = character
+          this.getType(character[4][0].type.name)
+          document.title = this.title + this.pokemon[0] + this.type
+        } catch (error) {
+          console.log(error)
+        }
+      })
+      .finally(() => (this.isLoading = false))
   },
 
   methods: {
@@ -49,18 +80,5 @@ export default {
 </script>
 
 <style scoped>
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 35rem;
-  width: 100%;
-}
-
-p {
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  font-family: 'Josefin Sans';
-}
+@import '../styles/main.css';
 </style>
