@@ -19,13 +19,6 @@
         </button>
       </div>
     </div>
-    <!-- <div v-if="!pokemon.url" @click="search(pokemon.name)">
-      <pd-default-icon
-        class="logoChar"
-        :content="pokemon.name"
-        v-tippy="{ arrow: true, theme: 'honeybee' }"
-      />
-    </div> -->
     <figure
       v-if="pokemon.url"
       :content="pokemon.name"
@@ -37,11 +30,8 @@
 </template>
 
 <script>
-// import PdDefaultIcon from '@/components/PdDefaultIcon'
-
 export default {
   name: 'PdMain',
-  // components: { PdDefaultIcon },
   props: {
     pokemon: {
       type: Object,
@@ -147,11 +137,6 @@ img {
   width: 100%;
   cursor: pointer;
 }
-/* 
-.logoChar {
-  outline: none;
-  cursor: pointer;
-} */
 
 /* --- --- -- RESPONSIVE DESIGN -- --- --- */
 @media only screen and (max-width: 1030px) {
