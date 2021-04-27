@@ -49,28 +49,5 @@ export default {
 </script>
 
 <style scoped>
-/* --- --- -- CONTAINER MAIN -- --- --- */
-
-.main {
-  width: 90%;
-  height: 30rem;
-  margin: auto;
-  display: flex;
-  border-radius: 40px;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--main);
-}
-
-.loadingBar {
-  margin: auto;
-}
-
-@media only screen and (max-width: 870px) {
-  .main {
-    height: 100%;
-    min-height: 35rem;
-    margin-bottom: 50px;
-  }
-}
+@import '../styles/main.css';
 </style>

@@ -1,4 +1,6 @@
 const API = 'https://pokeapi.co/api/v2/pokemon/id'
+const SPECIES = 'https://pokeapi.co/api/v2/pokemon-species/id'
+
 const SPRITES =
   'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/id.png'
 
@@ -19,4 +21,18 @@ function getImage() {
     ])
 }
 
-export default { getImage }
+function getAssets(id) {
+  let url = API.replace('id', `${id}`)
+  return fetch(url)
+    .then((response) => response.json())
+    .then((response) => [
+      response.name,
+      response.abilities,
+      response.height,
+      response.weight,
+      response.types,
+      SPECIES.replace('id', `${id}`),
+    ])
+}
+
+export default { getImage, getAssets }
