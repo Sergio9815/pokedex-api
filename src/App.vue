@@ -41,6 +41,13 @@ export default {
   font-weight: 400;
 }
 
+@font-face {
+  font-family: 'Josefin Sans';
+  src: local('Josefin Sans'),
+    url('./assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400;
+}
+
 /* --- --- -- MAIN STYLES -- --- --- */
 
 body {
