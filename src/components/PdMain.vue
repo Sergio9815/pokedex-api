@@ -1,5 +1,5 @@
 <template>
-  <article class="container">
+  <article class="main-container">
     <div class="container__search">
       <h3>{{ title }}</h3>
       <p>
