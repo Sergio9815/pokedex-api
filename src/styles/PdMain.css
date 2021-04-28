@@ -1,4 +1,4 @@
-.container {
+.main-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -83,7 +83,7 @@ img {
 
 /* --- --- -- RESPONSIVE DESIGN -- --- --- */
 @media only screen and (max-width: 1030px) {
-  .container {
+  .main-container {
     width: 90%;
     margin: auto;
   }
@@ -103,7 +103,7 @@ img {
 }
 
 @media only screen and (max-width: 800px) {
-  .container {
+  .main-container {
     flex-direction: column;
   }
 }

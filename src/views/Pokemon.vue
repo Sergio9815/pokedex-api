@@ -25,6 +25,7 @@ export default {
     return {
       isLoading: false,
       pokemon: [],
+      species: [],
       title: 'Pokémon | ',
       types: [
         { name: 'normal', icon: ' 🍥' },
@@ -58,15 +59,18 @@ export default {
     api
       .getAssets(this.pokemonName)
       .then((character) => {
-        try {
-          this.pokemon = character
-          this.getType(character[4][0].type.name)
-          document.title = this.title + this.pokemon[0] + this.type
-        } catch (error) {
-          console.log(error)
-        }
+        this.pokemon = character
+        this.getType(character[5][0].type.name)
+        document.title = this.title + this.pokemon[0] + this.type
       })
-      .finally(() => (this.isLoading = false))
+      .finally(() => {
+        api
+          .getSpecies(this.pokemon[1])
+          .then((character) => {
+            this.species = character
+          })
+          .finally(() => (this.isLoading = false))
+      })
   },
 
   methods: {

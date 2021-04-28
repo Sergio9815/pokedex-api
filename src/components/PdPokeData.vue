@@ -13,6 +13,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    species: {
+      type: Array,
+      default: () => [],
+    },
   },
 
   data() {

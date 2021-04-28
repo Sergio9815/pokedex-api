@@ -21,26 +21,30 @@ function getImage() {
     ])
 }
 
-function getSpecies(url) {
+function filterLanguage(element) {
+  return element.language.name === 'es'
+}
+
+function getSpecies(id) {
+  let url = SPECIES.replace('id', `${id}`)
   return fetch(url)
     .then((response) => response.json())
-    .then((response) => [response.flavor_text_entries[28].flavor_text])
+    .then((response) => [response.flavor_text_entries.find(filterLanguage)])
 }
 
 function getAssets(id) {
   let url = API.replace('id', `${id}`)
-  let species = getSpecies(SPECIES.replace('id', `${id}`))
   return fetch(url)
     .then((response) => response.json())
     .then((response) => [
       response.name,
+      response.id,
       response.abilities,
       response.height,
       response.weight,
       response.types,
-      species,
       SPRITES.replace('id', `${response.id}`),
     ])
 }
 
-export default { getImage, getAssets }
+export default { getImage, getAssets, getSpecies }
