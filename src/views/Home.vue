@@ -49,5 +49,5 @@ export default {
 </script>
 
 <style scoped>
-@import '../styles/main.css';
+@import '../styles/home.css';
 </style>

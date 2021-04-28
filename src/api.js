@@ -21,8 +21,15 @@ function getImage() {
     ])
 }
 
+function getSpecies(url) {
+  return fetch(url)
+    .then((response) => response.json())
+    .then((response) => [response.flavor_text_entries[28].flavor_text])
+}
+
 function getAssets(id) {
   let url = API.replace('id', `${id}`)
+  let species = getSpecies(SPECIES.replace('id', `${id}`))
   return fetch(url)
     .then((response) => response.json())
     .then((response) => [
@@ -31,7 +38,8 @@ function getAssets(id) {
       response.height,
       response.weight,
       response.types,
-      SPECIES.replace('id', `${id}`),
+      species,
+      SPRITES.replace('id', `${response.id}`),
     ])
 }
 

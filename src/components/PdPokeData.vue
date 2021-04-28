@@ -11,7 +11,7 @@ export default {
   props: {
     pokemon: {
       type: Array,
-      default: () => {},
+      default: () => [],
     },
   },
 
