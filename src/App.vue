@@ -18,13 +18,13 @@ export default {
 /* --- --- -- COLORS -- --- --- */
 :root {
   --red: #cc4040;
-  --brown: #d19b5d;
-  --blue: #2bd1ff;
-  --grey: #9caeb3;
+  --brown: #8b6c47;
+  --blue: #2e9ab8;
+  --grey: #333333;
   --white: #ffff;
-  --purple: #b691ff;
-  --pink: #fe91ca;
-  --green: #ade498;
+  --purple: #7250b4;
+  --pink: #c54a8a;
+  --green: #8db87c;
   --black: #000000;
   --main: #2b28466b;
   --yellow: #ffe476;

@@ -1,6 +1,5 @@
 .content__pokemon {
-  width: 90%;
-  /* background-color: lightcoral; */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,11 +17,9 @@
   margin-bottom: 5;
   -webkit-box-shadow: 0px 8px 10px -6px #0000005b;
   box-shadow: 0px 8px 10px -6px #0000005b;
-  /* background-color: cornflowerblue; */
 }
 
 .content__pokemon-info {
-  /* background-color: lightblue; */
   width: 80%;
   display: flex;
   margin-top: 0;
@@ -33,19 +30,44 @@
 }
 
 .pokemon__data {
-  width: 50%;
-  /* background-color: lightgreen; */
+  width: 40%;
+  color: var(--background);
+  padding: 20px 35px;
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 .pokemon__data-description {
   text-align: justify;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--grey);
+  font-family: 'Roboto', sans-serif;
 }
 
-.pokemon__data-charac {
+.pokemon__data-grid {
+  background-color: var(--red);
+  color: var(--white);
+  border-radius: 10px;
+  display: grid;
+  padding: 25px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid__text {
   text-align: justify;
+  font-size: 18px;
+}
+
+.grid__text-p {
   font-size: 20px;
+}
+
+.grid__text-abilities {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: -16px;
+  gap: 10px;
 }
 
 .pokemon__picture {
@@ -63,32 +85,57 @@
 }
 
 .yellow {
-  text-shadow: -1px 2px var(--yellow);
+  background-color: var(--yellow);
+  color: var(--background);
 }
 .blue {
-  text-shadow: -2px 3px var(--blue);
+  background-color:  var(--blue);
 }
 .white {
-  text-shadow: -2px 3px var(--white);
+  background-color:  var(--yellow);
 }
 .grey {
-  text-shadow: -2px 3px var(--grey);
+  background-color:  var(--grey);
 }
 .brown {
-  text-shadow: -2px 3px var(--brown);
+  background-color:  var(--brown);
 }
 .purple {
-  text-shadow: -2px 3px var(--purple);
+  background-color:  var(--purple);
 }
 .black {
-  text-shadow: -2px 3px var(--back);
+  background-color:  var(--back);
 }
 .red {
-  text-shadow: -2px 3px var(--red);
+  background-color:  var(--red);
 }
 .pink {
-  text-shadow: -2px 3px var(--pink);
+  background-color:  var(--pink);
 }
 .green {
-  text-shadow: -2px 3px var(--green);
+  background-color:  var(--green);
+}
+
+
+
+/* --- --- -- RESPONSIVE DESIGN -- --- --- */
+@media only screen and (max-width: 1035px) {
+  .content__pokemon-info {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .pokemon__data {
+    width: 60%;
+    margin-top: -30px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .pokemon__data {
+    width: 90%;
+    margin-top: -30px;
+  }
+
 }

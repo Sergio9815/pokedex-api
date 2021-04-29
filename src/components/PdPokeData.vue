@@ -3,29 +3,35 @@
     <section class="content__pokemon">
       <!-- :class="colors ? colors : 'red' -->
       <h3 class="content__pokemon-title">
-        {{ pokemon[0] }} º {{ pokemon[1] }}
+        {{ pokemon[0] }} # {{ pokemon[1] }}
       </h3>
       <div class="content__pokemon-info">
         <div class="pokemon__data">
           <p class="pokemon__data-description">{{ species[1].flavor_text }}</p>
-          <p class="pokemon__data-charac">Altura: {{ pokemon[3] | height }}</p>
-          <p class="pokemon__data-charac">Peso: {{ pokemon[4] | weight }}</p>
-          <p class="pokemon__data-charac">
-            Tipo: {{ pokemon[5][0].type.name | tr }}
-          </p>
-          <p class="pokemon__data-charac">Habilidades:</p>
-          <ol>
-            <li v-for="item in pokemon[2]" v-bind:key="item.day">
-              {{ item.ability.name }}
-            </li>
-          </ol>
+          <div :class="colors ? colors : 'red'" class="pokemon__data-grid">
+            <div>
+              <h1 class="grid__text">Altura</h1>
+              <p class="grid__text-p">{{ pokemon[3] | height }}</p>
+            </div>
+            <div>
+              <h1 class="grid__text">Peso</h1>
+              <p class="grid__text-p">{{ pokemon[4] | weight }}</p>
+            </div>
+            <div>
+              <h1 class="grid__text">Tipo</h1>
+              <p class="grid__text-p">{{ pokemon[5][0].type.name | tr }}</p>
+            </div>
+            <div>
+              <h1 class="grid__text">Habilidad</h1>
+              <p class="grid__text-p">{{ pokemon[2][0].ability.name }}</p>
+            </div>
+          </div>
         </div>
         <figure class="pokemon__picture">
           <img class="pokemon__picture-img" :src="pokemon[6]" alt="" />
         </figure>
       </div>
     </section>
-
   </article>
 </template>
 
@@ -55,7 +61,6 @@ export default {
       return utils.getColor(this.species[0])
     },
   },
-
 }
 </script>
 

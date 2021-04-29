@@ -1,11 +1,16 @@
 <template>
   <section class="main">
     <div class="header-decoration"></div>
+    <div v-if="!isLoading" class="main__back">
+      <a class="main__back-text" @click="goToHome" href="">
+        <i class="fas fa-arrow-left"></i> Volver</a
+      >
+    </div>
     <div class="main__data">
       <bar-loader
         class="loadingBar"
         :loading="isLoading"
-        :color="'#ffffff'"
+        :color="'#19142a'"
         :size="100"
         :width="150"
       />
@@ -53,6 +58,12 @@ export default {
           })
           .finally(() => (this.isLoading = false))
       })
+  },
+
+  methods: {
+    goToHome() {
+      this.$router.push({ name: 'home' })
+    },
   },
 }
 </script>
