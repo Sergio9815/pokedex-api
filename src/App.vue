@@ -17,8 +17,12 @@ export default {
 <style>
 /* --- --- -- COLORS -- --- --- */
 :root {
-  --red: #cc405c;
+  --red: #cc4040;
+  --blue: #2bd1ff;
   --white: #ffff;
+  --purple: #b691ff;
+  --pink: #fe91ca;
+  --green: #ade498;
   --main: #2b28466b;
   --yellow: #ffe476;
   --orange: #ffb94f;
@@ -53,6 +57,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   background-color: var(--background);
   color: var(--white);
 }

@@ -8,7 +8,7 @@
         :size="100"
         :width="150"
       />
-      <pd-poke-data v-if="!isLoading" :pokemon="pokemon" />
+      <pd-poke-data v-if="!isLoading" :pokemon="pokemon" :species="species" />
     </div>
   </section>
 </template>
@@ -16,6 +16,7 @@
 <script>
 import PdPokeData from '@/components/PdPokeData'
 import api from '@/api'
+import utils from '@/utils'
 
 export default {
   name: 'Pokemon',
@@ -27,26 +28,6 @@ export default {
       pokemon: [],
       species: [],
       title: 'Pokémon | ',
-      types: [
-        { name: 'normal', icon: ' 🍥' },
-        { name: 'fire', icon: ' 🔥' },
-        { name: 'water', icon: ' 🌊' },
-        { name: 'grass', icon: ' 🍃' },
-        { name: 'electric', icon: ' ⚡' },
-        { name: 'ice', icon: ' ❄️' },
-        { name: 'poison', icon: ' 🧪' },
-        { name: 'fighting', icon: ' 🥊' },
-        { name: 'ground', icon: ' 🟤' },
-        { name: 'flying', icon: ' 🦅' },
-        { name: 'psychic', icon: ' 🔮' },
-        { name: 'bug', icon: ' 🐛' },
-        { name: 'ghost', icon: ' 👻' },
-        { name: 'dragon', icon: ' 🐲' },
-        { name: 'dark', icon: ' 💀' },
-        { name: 'fairy', icon: ' 🎆' },
-        { name: 'steel', icon: ' 🔩' },
-        { name: 'rock', icon: ' 🔘' },
-      ],
       type: '',
       pokemonName: '',
     }
@@ -60,7 +41,7 @@ export default {
       .getAssets(this.pokemonName)
       .then((character) => {
         this.pokemon = character
-        this.getType(character[5][0].type.name)
+        this.type = utils.getType(character[5][0].type.name)
         document.title = this.title + this.pokemon[0] + this.type
       })
       .finally(() => {
@@ -71,14 +52,6 @@ export default {
           })
           .finally(() => (this.isLoading = false))
       })
-  },
-
-  methods: {
-    getType(name) {
-      this.types.forEach((type) => {
-        return type.name === name ? (this.type = type.icon) : ' '
-      })
-    },
   },
 }
 </script>

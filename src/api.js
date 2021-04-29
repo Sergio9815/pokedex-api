@@ -25,11 +25,20 @@ function filterLanguage(element) {
   return element.language.name === 'es'
 }
 
+function filterLanguageEn(element) {
+  return element.language.name === 'en'
+}
+
 function getSpecies(id) {
   let url = SPECIES.replace('id', `${id}`)
   return fetch(url)
     .then((response) => response.json())
-    .then((response) => [response.flavor_text_entries.find(filterLanguage)])
+    .then((response) => [
+      response.color.name,
+      response.flavor_text_entries.find(filterLanguage)
+        ? response.flavor_text_entries.find(filterLanguage)
+        : response.flavor_text_entries.find(filterLanguageEn),
+    ])
 }
 
 function getAssets(id) {
