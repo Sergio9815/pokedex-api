@@ -1,6 +1,7 @@
 <template>
   <section class="main">
-    <div class="main__content">
+    <div class="header-decoration"></div>
+    <div class="main__data">
       <bar-loader
         class="loadingBar"
         :loading="isLoading"
@@ -57,5 +58,5 @@ export default {
 </script>
 
 <style scoped>
-@import '../styles/home.css';
+@import '../styles/pokemon.css';
 </style>

@@ -1,7 +1,8 @@
 <template>
   <article class="content">
     <section class="content__pokemon">
-      <h3 class="content__pokemon-title" :class="colors ? colors : 'red'">
+      <!-- :class="colors ? colors : 'red' -->
+      <h3 class="content__pokemon-title">
         {{ pokemon[0] }} º {{ pokemon[1] }}
       </h3>
       <div class="content__pokemon-info">
@@ -25,7 +26,6 @@
       </div>
     </section>
 
-    <!-- <p class="normal">🚀 SITIO EN DESARROLLO...</p> -->
   </article>
 </template>
 
@@ -56,14 +56,9 @@ export default {
     },
   },
 
-  methods: {
-    search(id = this.value) {
-      this.$router.push({ name: 'pokemon', params: { id } })
-    },
-  },
 }
 </script>
 
 <style scoped>
-@import '../styles/pokemons.css';
+@import '../styles/PdPokeData.css';
 </style>

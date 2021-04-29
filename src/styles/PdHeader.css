@@ -4,6 +4,7 @@
   width: 100%;
   height: 80px;
   justify-content: center;
+  background-color: var(--background);
 }
 
 .container__menu {
@@ -34,7 +35,7 @@ a {
   justify-content: flex-start;
   letter-spacing: 3px;
   margin-left: 30px;
-  font-family: 'Cantora One', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {

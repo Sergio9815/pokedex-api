@@ -1,5 +1,5 @@
 <template>
-  <section class="main">
+  <section>
     <div class="main__content">
       <bar-loader
         class="loadingBar"
