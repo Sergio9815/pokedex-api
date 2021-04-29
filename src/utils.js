@@ -23,7 +23,7 @@ const COLORS = [
   'yellow',
   'blue',
   'white',
-  'grey',
+  'gray',
   'brown',
   'purple',
   'black',

@@ -92,10 +92,11 @@
   background-color:  var(--blue);
 }
 .white {
-  background-color:  var(--yellow);
+  background-color:  var(--white-);
+  color: var(--background);
 }
-.grey {
-  background-color:  var(--grey);
+.gray {
+  background-color:  var(--gray);
 }
 .brown {
   background-color:  var(--brown);
@@ -104,7 +105,7 @@
   background-color:  var(--purple);
 }
 .black {
-  background-color:  var(--back);
+  background-color:  var(--black);
 }
 .red {
   background-color:  var(--red);
@@ -125,7 +126,10 @@
     align-items: center;
     width: 100%;
   }
-  
+  .content__pokemon-title {
+    width: 100%;
+  }
+
   .pokemon__data {
     width: 60%;
     margin-top: -30px;

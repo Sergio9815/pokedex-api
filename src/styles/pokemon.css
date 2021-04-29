@@ -15,7 +15,6 @@
   display: flex;
   width: 100px;
   padding: 6px;
-  /* border: 2px solid var(--background); */
   position: absolute;
   margin-top: 33px;
   align-items: center;
@@ -28,7 +27,7 @@
 }
 
 .main__back-text:hover {
-  color: var(--blue);
+  color: var(--pink);
 }
 
 .main__back-text i {

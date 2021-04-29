@@ -10,19 +10,19 @@
           <p class="pokemon__data-description">{{ species[1].flavor_text }}</p>
           <div :class="colors ? colors : 'red'" class="pokemon__data-grid">
             <div>
-              <h1 class="grid__text">Altura</h1>
+              <h4 class="grid__text">Altura</h4>
               <p class="grid__text-p">{{ pokemon[3] | height }}</p>
             </div>
             <div>
-              <h1 class="grid__text">Peso</h1>
+              <h4 class="grid__text">Peso</h4>
               <p class="grid__text-p">{{ pokemon[4] | weight }}</p>
             </div>
             <div>
-              <h1 class="grid__text">Tipo</h1>
+              <h4 class="grid__text">Tipo</h4>
               <p class="grid__text-p">{{ pokemon[5][0].type.name | tr }}</p>
             </div>
             <div>
-              <h1 class="grid__text">Habilidad</h1>
+              <h4 class="grid__text">Habilidad</h4>
               <p class="grid__text-p">{{ pokemon[2][0].ability.name }}</p>
             </div>
           </div>

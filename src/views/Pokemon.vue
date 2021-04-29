@@ -41,7 +41,7 @@ export default {
 
   created() {
     this.isLoading = true
-    this.pokemonName = this.$route.params.id
+    this.pokemonName = this.$route.params.id.toLowerCase()
 
     api
       .getAssets(this.pokemonName)

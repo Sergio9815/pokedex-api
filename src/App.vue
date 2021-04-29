@@ -19,9 +19,10 @@ export default {
 :root {
   --red: #cc4040;
   --brown: #8b6c47;
-  --blue: #2e9ab8;
-  --grey: #333333;
+  --blue: #2e65b8;
+  --gray: #333333;
   --white: #ffff;
+  --white-: rgb(206, 255, 255);
   --purple: #7250b4;
   --pink: #c54a8a;
   --green: #8db87c;
