@@ -1,11 +1,7 @@
 <template>
   <section class="main">
     <div class="header-decoration"></div>
-    <div v-if="!isLoading" class="main__back">
-      <a class="main__back-text" @click="goToHome" href="">
-        <i class="fas fa-arrow-left"></i> Volver</a
-      >
-    </div>
+    <pd-back-button v-if="!isLoading" v-on:goBack="goToHome" />
     <div class="main__data">
       <bar-loader
         class="loadingBar"
@@ -21,12 +17,13 @@
 
 <script>
 import PdPokeData from '@/components/PdPokeData'
+import PdBackButton from '@/components/PdBackButton'
 import api from '@/api'
 import utils from '@/utils'
 
 export default {
   name: 'Pokemon',
-  components: { PdPokeData },
+  components: { PdPokeData, PdBackButton },
 
   data() {
     return {
@@ -60,9 +57,19 @@ export default {
       })
   },
 
+  updated() {
+    this.pokemon.length === 0
+      ? this.goToNotFound()
+      : console.log('Petición exitosa!')
+  },
+
   methods: {
     goToHome() {
       this.$router.push({ name: 'home' })
+    },
+
+    goToNotFound() {
+      this.$router.push({ name: 'error' })
     },
   },
 }

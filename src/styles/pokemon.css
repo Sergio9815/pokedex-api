@@ -6,32 +6,8 @@
   height: 45rem;
 }
 
-.main__back {
-  width: 80%;
-  margin: auto;
-}
-
-.main__back-text {
-  display: flex;
-  width: 100px;
-  padding: 6px;
-  position: absolute;
-  margin-top: 33px;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  font-family: 'Josefin Sans';
-  text-transform: uppercase;
-  color: var(--background);
-  border-radius: 2px;
-}
-
-.main__back-text:hover {
-  color: var(--pink);
-}
-
-.main__back-text i {
-  font-size: 14px;
+body {
+  background-color: var(--background);
 }
 
 .header-decoration {
@@ -40,9 +16,6 @@
   margin-bottom: 36px;
 }
 
-body {
-  background-color: var(--background);
-}
 
 .loadingBar {
   margin: auto;
@@ -53,9 +26,5 @@ body {
     height: 100%;
     min-height: 45rem;
     margin-bottom: 50px;
-  }
-  
-  .main__back-text {
-    margin-top: 0px;
   }
 }
