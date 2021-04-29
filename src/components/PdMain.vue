@@ -1,12 +1,12 @@
 <template>
-  <article class="main-container">
-    <div class="container__search">
-      <h3>{{ title }}</h3>
-      <p>
+  <article class="content">
+    <div class="content__search">
+      <h3 class="content__search-title">{{ title }}</h3>
+      <p class="content__search-paragraph">
         ¡Encuentra a tus Pokémon favoritos! Es tan fácil como escribir el nombre
         o número correspondiente a la Pokédex Nacional y listo. 🌟
       </p>
-      <div class="container__search-bar">
+      <div class="content__search-bar">
         <input
           v-model="value"
           class="bar--input"
@@ -21,10 +21,16 @@
     </div>
     <figure
       v-if="pokemon.url"
+      class="content__figure"
       :content="pokemon.name"
       v-tippy="{ arrow: true, theme: 'honeybee' }"
     >
-      <img :src="pokemon.url" alt="" @click="search(pokemon.name)" />
+      <img
+        class="content__figure-img"
+        :src="pokemon.url"
+        alt=""
+        @click="search(pokemon.name)"
+      />
     </figure>
   </article>
 </template>

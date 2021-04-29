@@ -1,5 +1,5 @@
 <template>
-  <section class="main">
+  <section>
     <div class="main__content">
       <bar-loader
         class="loadingBar"
@@ -35,16 +35,12 @@ export default {
         try {
           this.pokemon.name = character[0]
           this.pokemon.url = character[1]
-          this.pokemon.url
-            ? this.pokemon.name
-            : (this.pokemon.name = 'charizard')
         } catch (error) {
           console.log(error)
         }
       })
       .finally(() => (this.isLoading = false))
   },
-  methods: {},
 }
 </script>
 

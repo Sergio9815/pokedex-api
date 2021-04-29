@@ -1,21 +1,21 @@
-.main-container {
+.content {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-h3 {
+.content__search-title {
   text-shadow: -3px 3px var(--red);
   font-family: 'Cantora One', sans-serif;
   font-size: 30px;
 }
 
-p {
+.content__search-paragraph {
   width: 80%;
   line-height: 30px;
 }
 
-.container__search {
+.content__search {
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ p {
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-.container__search-bar {
+.content__search-bar {
   width: 100%;
   display: flex;
   align-items: center;
@@ -69,30 +69,30 @@ p {
   color: var(--yellow);
 }
 
-figure {
+.content__figure {
   width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-img {
+.content__figure-img {
   width: 100%;
   cursor: pointer;
 }
 
 /* --- --- -- RESPONSIVE DESIGN -- --- --- */
 @media only screen and (max-width: 1030px) {
-  .main-container {
+  .content {
     width: 90%;
     margin: auto;
   }
 
-  .container__search {
+  .content__search {
     width: 100%;
   }
 
-  figure {
+  .content__figure {
     width: 50%;
   }
 
@@ -103,7 +103,8 @@ img {
 }
 
 @media only screen and (max-width: 800px) {
-  .main-container {
+  .content {
     flex-direction: column;
+    margin-top: 50px;
   }
 }

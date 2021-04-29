@@ -1,25 +1,29 @@
 <template>
   <section class="main">
-    <div class="main__content">
+    <div class="header-decoration"></div>
+    <pd-back-button v-if="!isLoading" v-on:goBack="goToHome" />
+    <div class="main__data">
       <bar-loader
         class="loadingBar"
         :loading="isLoading"
-        :color="'#ffffff'"
+        :color="'#19142a'"
         :size="100"
         :width="150"
       />
-      <pd-poke-data v-if="!isLoading" :pokemon="pokemon" />
+      <pd-poke-data v-if="!isLoading" :pokemon="pokemon" :species="species" />
     </div>
   </section>
 </template>
 
 <script>
 import PdPokeData from '@/components/PdPokeData'
+import PdBackButton from '@/components/PdBackButton'
 import api from '@/api'
+import utils from '@/utils'
 
 export default {
   name: 'Pokemon',
-  components: { PdPokeData },
+  components: { PdPokeData, PdBackButton },
 
   data() {
     return {
@@ -27,26 +31,6 @@ export default {
       pokemon: [],
       species: [],
       title: 'Pokémon | ',
-      types: [
-        { name: 'normal', icon: ' 🍥' },
-        { name: 'fire', icon: ' 🔥' },
-        { name: 'water', icon: ' 🌊' },
-        { name: 'grass', icon: ' 🍃' },
-        { name: 'electric', icon: ' ⚡' },
-        { name: 'ice', icon: ' ❄️' },
-        { name: 'poison', icon: ' 🧪' },
-        { name: 'fighting', icon: ' 🥊' },
-        { name: 'ground', icon: ' 🟤' },
-        { name: 'flying', icon: ' 🦅' },
-        { name: 'psychic', icon: ' 🔮' },
-        { name: 'bug', icon: ' 🐛' },
-        { name: 'ghost', icon: ' 👻' },
-        { name: 'dragon', icon: ' 🐲' },
-        { name: 'dark', icon: ' 💀' },
-        { name: 'fairy', icon: ' 🎆' },
-        { name: 'steel', icon: ' 🔩' },
-        { name: 'rock', icon: ' 🔘' },
-      ],
       type: '',
       pokemonName: '',
     }
@@ -54,13 +38,13 @@ export default {
 
   created() {
     this.isLoading = true
-    this.pokemonName = this.$route.params.id
+    this.pokemonName = this.$route.params.id.toLowerCase()
 
     api
       .getAssets(this.pokemonName)
       .then((character) => {
         this.pokemon = character
-        this.getType(character[5][0].type.name)
+        this.type = utils.getType(character[5][0].type.name)
         document.title = this.title + this.pokemon[0] + this.type
       })
       .finally(() => {
@@ -73,16 +57,24 @@ export default {
       })
   },
 
+  updated() {
+    this.pokemon.length === 0
+      ? this.goToNotFound()
+      : console.log('Petición exitosa!')
+  },
+
   methods: {
-    getType(name) {
-      this.types.forEach((type) => {
-        return type.name === name ? (this.type = type.icon) : ' '
-      })
+    goToHome() {
+      this.$router.push({ name: 'home' })
+    },
+
+    goToNotFound() {
+      this.$router.push({ name: 'error' })
     },
   },
 }
 </script>
 
 <style scoped>
-@import '../styles/home.css';
+@import '../styles/pokemon.css';
 </style>

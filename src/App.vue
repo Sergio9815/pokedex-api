@@ -17,8 +17,16 @@ export default {
 <style>
 /* --- --- -- COLORS -- --- --- */
 :root {
-  --red: #cc405c;
+  --red: #cc4040;
+  --brown: #8b6c47;
+  --blue: #2e65b8;
+  --gray: #333333;
   --white: #ffff;
+  --white-: rgb(206, 255, 255);
+  --purple: #7250b4;
+  --pink: #c54a8a;
+  --green: #8db87c;
+  --black: #000000;
   --main: #2b28466b;
   --yellow: #ffe476;
   --orange: #ffb94f;
@@ -48,12 +56,19 @@ export default {
   font-weight: 400;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'),
+    url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
 /* --- --- -- MAIN STYLES -- --- --- */
 
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--background);
+  box-sizing: border-box;
   color: var(--white);
 }
 </style>
