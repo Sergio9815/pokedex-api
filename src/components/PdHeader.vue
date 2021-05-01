@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     showMenu() {
-      alert('Menu')
+      alert('Función en desarrollo... 🚀')
     },
   },
 }
