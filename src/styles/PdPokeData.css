@@ -24,6 +24,7 @@
   display: flex;
   margin-top: 0;
   align-items: center;
+  margin-bottom: 50px;
   justify-content: space-around;
   -webkit-box-shadow: 0px 8px 10px -6px #0000005b;
   box-shadow: 0px 8px 10px -6px #0000005b;
@@ -55,9 +56,11 @@
 .grid__text {
   text-align: justify;
   font-size: 18px;
+  margin-left: 30px;
 }
 
 .grid__text-p {
+  margin-left: 30px;
   font-size: 20px;
 }
 

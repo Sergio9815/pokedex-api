@@ -40,7 +40,7 @@ export default {
 }
 
 .main__back-text:hover {
-  color: var(--pink);
+  color: var(--blue);
 }
 
 .main__back-text i {
@@ -50,6 +50,7 @@ export default {
 @media only screen and (max-width: 1035px) {
   .main__back-text {
     margin-top: 0px;
+    margin-left: -35px;
   }
 }
 </style>
