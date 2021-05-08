@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: center;
   width: 50px;
+  margin-left: 28px;
 }
 
 a {
@@ -19,8 +20,24 @@ a {
   color: var(--white);
 }
 
+.fas:hover {
+  transition: 1s;
+  transform: rotate(90deg);
+}
+
+.container__menu-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .fas {
   font-size: 20px;
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
 }
 
 .container__link {

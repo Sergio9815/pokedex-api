@@ -27,7 +27,7 @@
             </div>
           </div>
         </div>
-        <figure class="pokemon__picture">
+        <figure class="pokemon__picture animate__animated animate__slideInUp">
           <img class="pokemon__picture-img" :src="pokemon[6]" alt="" />
         </figure>
       </div>
@@ -37,6 +37,7 @@
 
 <script>
 import utils from '@/utils'
+import 'animate.css'
 
 export default {
   name: 'PdPokeData',

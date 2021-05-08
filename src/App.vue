@@ -33,6 +33,10 @@ export default {
   --background: #19142a;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* --- --- -- LOCAL FONTS -- --- --- */
 
 @font-face {

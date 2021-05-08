@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Sergio9815/pokedex-api#readme",
   "dependencies": {
     "@saeris/vue-spinners": "^1.0.8",
+    "animate.css": "^4.1.1",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.5.1",
