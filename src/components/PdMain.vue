@@ -21,7 +21,7 @@
     </div>
     <figure
       v-if="pokemon.url"
-      class="content__figure"
+      class="content__figure animate__animated animate__zoomIn"
       :content="pokemon.name"
       v-tippy="{ arrow: true, theme: 'honeybee' }"
     >
@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import 'animate.css'
+
 export default {
   name: 'PdMain',
   props: {

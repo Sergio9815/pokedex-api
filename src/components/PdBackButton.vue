@@ -2,7 +2,7 @@
   <div>
     <div class="main__back">
       <a class="main__back-text" @click="toggleButton" href="">
-        <i class="fas fa-arrow-left"></i> Volver
+        <i class="fas fa-arrow-left back"></i> Volver
       </a>
     </div>
   </div>
@@ -39,12 +39,14 @@ export default {
   border-radius: 2px;
 }
 
-.main__back-text:hover {
+.main__back-text:hover,
+.back:hover {
   color: var(--blue);
 }
 
 .main__back-text i {
   font-size: 14px;
+  color: var(--background);
 }
 
 @media only screen and (max-width: 1035px) {

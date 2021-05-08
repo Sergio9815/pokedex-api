@@ -1,7 +1,15 @@
 <template>
   <nav class="container">
     <div class="container__menu">
-      <a @click="showMenu" href=""><i class="fas fa-bars"></i></a>
+      <button class="container__menu-btn" @click="showMenu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <pd-slide
+        class="animate__animated animate__fadeIn"
+        v-show="showSocial"
+        v-on:hide="showMenu"
+        :showSocial="showSocial"
+      />
     </div>
     <div class="container__title">
       <router-link class="container__link" :to="{ name: 'home' }">
@@ -14,17 +22,22 @@
 </template>
 
 <script>
+import PdSlide from '@/components/PdSlide'
+import 'animate.css'
+
 export default {
   name: 'PdHeader',
+  components: { PdSlide },
   data() {
     return {
       title: 'Poke',
       subtitle: 'Dex',
+      showSocial: false,
     }
   },
   methods: {
     showMenu() {
-      alert('Función en desarrollo... 🚀')
+      this.showSocial = !this.showSocial
     },
   },
 }
