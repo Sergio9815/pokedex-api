@@ -81,6 +81,10 @@
   cursor: pointer;
 }
 
+.fa-search {
+  font-size: 16px;
+}
+
 /* --- --- -- RESPONSIVE DESIGN -- --- --- */
 @media only screen and (max-width: 1030px) {
   .content {
