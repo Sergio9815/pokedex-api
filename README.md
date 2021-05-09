@@ -5,4 +5,4 @@ Site link
 
 Disponible en: https://pokedex-vue-js.vercel.app/
 
-![Screenshot (53)](https://user-images.githubusercontent.com/37419848/117564463-c6522f80-b071-11eb-8b95-c64b6fc05bfe.png)
+![Screenshot (54)](https://user-images.githubusercontent.com/37419848/117588699-bf1b3800-b0ea-11eb-8ecc-97c1254fc979.png)
