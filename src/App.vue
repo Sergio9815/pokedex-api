@@ -17,7 +17,7 @@ export default {
 <style>
 /* --- --- -- COLORS -- --- --- */
 :root {
-  --red: #cc4040;
+  --red: #d9113a;
   --brown: #8b6c47;
   --blue: #2e65b8;
   --gray: #333333;
@@ -27,10 +27,10 @@ export default {
   --pink: #c54a8a;
   --green: #8db87c;
   --black: #000000;
-  --main: #2b28466b;
+  --main: #232b3a5e;
   --yellow: #ffe476;
   --orange: #ffb94f;
-  --background: #19142a;
+  --background: #101620;
 }
 
 html {
