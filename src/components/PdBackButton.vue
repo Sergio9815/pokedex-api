@@ -2,7 +2,7 @@
   <div>
     <div class="main__back">
       <a class="main__back-text" @click="toggleButton" href="">
-        <i class="fas fa-arrow-left back"></i> Volver
+        <i class="fas fa-arrow-left back"></i>
       </a>
     </div>
   </div>
@@ -25,6 +25,7 @@ export default {
 }
 
 .main__back-text {
+  z-index: 0;
   display: flex;
   width: 100px;
   padding: 6px;
@@ -39,20 +40,24 @@ export default {
   border-radius: 2px;
 }
 
-.main__back-text:hover,
-.back:hover {
-  color: var(--blue);
+.main__back-text:hover {
+  color: var(--red);
 }
 
-.main__back-text i {
-  font-size: 14px;
+.main__back-text {
+  font-size: 15px;
   color: var(--background);
 }
 
 @media only screen and (max-width: 1035px) {
   .main__back-text {
-    margin-top: 0px;
-    margin-left: -35px;
+    margin-top: -167px;
+    margin-left: -27px;
+    color: white;
+  }
+
+  .main__back-text {
+    font-size: 20px;
   }
 }
 </style>

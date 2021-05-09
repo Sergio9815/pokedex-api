@@ -20,6 +20,7 @@ a {
 
 .container__title {
   display: flex;
+  width: 200px;
   align-items: center;
   justify-content: flex-start;
   letter-spacing: 3px;
@@ -37,24 +38,70 @@ h2 {
   color: var(--red);
 }
 
-.container__buttons {
-  font-family: 'Roboto', sans-serif;
+.btn-down {
+  width: 200px;
+  margin-top: 0;
+  display: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.down {
+  color: var(--red);
+  font-size: 15px;
+}
+
+.down:hover {
+  color: var(--white);
+}
+
+.socialbar {
+  width: 100%;
+  height: 23vh;
+  transition: 1s;
+  margin-top: -10px;
+  display: none;
+  z-index: 1;
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--background);
+  color: white;
+}
+
+/* --- --- -- RESPONSIVE DESIGN -- --- --- */
+@media only screen and (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+
+  .container__title {
+    margin-left: 0;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+  
+  h2 {
+    font-size: 27px;
+  }
+
+  .socialbar {
+    display: flex;
+  }
+
+  .btnS {
+    display: none;
+  }
+  
+  .btn-down {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 260px;
-}
-
-.btn {
-  font-size: 14px;
-  background-color: var(--red);
-  padding: 7px;
-  letter-spacing: 3px;
-  border-radius: 3px;
-}
-
-.btn:hover {
-  background-color: var(--white);
-  color: var(--red);
-  transition: 1s;
+    justify-content: center;
+  }
 }
