@@ -49,7 +49,7 @@ export default {
   color: var(--background);
 }
 
-@media only screen and (max-width: 1035px) {
+@media only screen and (max-width: 700px) {
   .main__back-text {
     margin-top: -167px;
     margin-left: -27px;
