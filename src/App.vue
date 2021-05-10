@@ -20,6 +20,7 @@ export default {
   --red: #d9113a;
   --brown: #8b6c47;
   --blue: #2e65b8;
+  --blue-light: #2e65b841;
   --gray: #333333;
   --white: #ffff;
   --white-: rgb(206, 255, 255);
@@ -74,5 +75,20 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #919191;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--white);
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--blue-light);
+  /* background-image: -webkit-linear-gradient(90deg,rgba(255, 255, 255, .2) 25%,transparent 25%,transparent 50%,rgba(255, 255, 255, .2) 50%,rgba(255, 255, 255, .2) 75%,transparent 75%,transparent) */
 }
 </style>

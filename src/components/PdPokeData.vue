@@ -2,9 +2,12 @@
   <article class="content">
     <section class="content__pokemon">
       <!-- :class="colors ? colors : 'red' -->
-      <h3 class="content__pokemon-title">
-        {{ pokemon[0] }} # {{ pokemon[1] }}
-      </h3>
+      <div class="content__pokemon-title">
+        <h1 class="title-poke">
+          {{ pokemon[0] }}
+        </h1>
+        <h1 id="id" class="title-poke"># {{ pokemon[1] }}</h1>
+      </div>
       <div class="content__pokemon-info">
         <div class="pokemon__data">
           <p class="pokemon__data-description">{{ species[1].flavor_text }}</p>
