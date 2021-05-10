@@ -48,6 +48,34 @@ export default {
   color: var(--background);
 }
 
+@media only screen and (max-width: 1035px) {
+  .main__back-text {
+    margin-top: 36px;
+    margin-left: -48px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .main__back-text {
+    margin-top: 36px;
+    margin-left: -40px;
+  }
+}
+
+@media only screen and (max-width: 805px) {
+  .main__back-text {
+    margin-top: 38px;
+    margin-left: -37px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .main__back-text {
+    margin-top: 49px;
+    margin-left: -37px;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .main__back-text {
     margin-top: -167px;
