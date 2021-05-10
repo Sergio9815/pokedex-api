@@ -27,7 +27,6 @@ export default {
 .main__back-text {
   z-index: 0;
   display: flex;
-  width: 100px;
   padding: 6px;
   position: absolute;
   margin-top: 33px;
