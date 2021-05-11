@@ -23,11 +23,33 @@
             </div>
             <div>
               <h4 class="grid__text">Tipo</h4>
-              <p class="grid__text-p">{{ pokemon[5][0].type.name | tr }}</p>
+              <select
+                :class="colors ? colors : 'red'"
+                class="grid__text-p select"
+              >
+                <option
+                  :class="colors ? colors : 'red'"
+                  v-for="item in pokemon[5]"
+                  :key="item.type.name"
+                >
+                  {{ item.type.name | tr }}
+                </option>
+              </select>
             </div>
             <div>
-              <h4 class="grid__text">Habilidad</h4>
-              <p class="grid__text-p">{{ pokemon[2][0].ability.name }}</p>
+              <h4 class="grid__text">Habilidades</h4>
+              <select
+                :class="colors ? colors : 'red'"
+                class="grid__text-p select"
+              >
+                <option
+                  :class="colors ? colors : 'red'"
+                  v-for="item in abilities"
+                  :key="item[0]"
+                >
+                  {{ item }}
+                </option>
+              </select>
             </div>
           </div>
         </div>
@@ -59,7 +81,13 @@ export default {
   },
 
   data() {
-    return {}
+    return {
+      abilities: [],
+    }
+  },
+
+  created() {
+    this.abilities = this.pokemon[7]
   },
 
   mounted() {

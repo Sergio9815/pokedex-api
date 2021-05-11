@@ -75,6 +75,16 @@
   font-size: 20px;
 }
 
+.select{
+  font-size: 15px;
+  background: transparent;
+  border: none;
+}
+
+.select:focus {
+  outline: none;
+}
+
 .grid__text-abilities {
   display: flex;
   align-items: flex-start;
@@ -104,31 +114,39 @@
 }
 .blue {
   background-color:  var(--blue);
+  color: var(--white);
 }
 .white {
-  background-color:  var(--white-);
+  background-color: var(--white-);
   color: var(--background);
 }
 .gray {
   background-color:  var(--gray);
+  color: var(--white);
 }
 .brown {
   background-color:  var(--brown);
+  color: var(--white);
 }
 .purple {
   background-color:  var(--purple);
+  color: var(--white);
 }
 .black {
   background-color:  var(--black);
+  color: var(--white);
 }
 .red {
   background-color:  var(--red);
+  color: var(--white);
 }
 .pink {
   background-color:  var(--pink);
+  color: var(--white);
 }
 .green {
   background-color:  var(--green);
+  color: var(--white);
 }
 
 
