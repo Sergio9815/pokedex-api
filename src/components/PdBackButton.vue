@@ -20,8 +20,11 @@ export default {
 
 <style scoped>
 .main__back {
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 0;
 }
 
 .main__back-text {
@@ -29,9 +32,9 @@ export default {
   display: flex;
   padding: 6px;
   position: absolute;
-  margin-top: 33px;
-  align-items: center;
-  gap: 10px;
+  margin-top: 38px;
+  width: 78%;
+  cursor: auto;
   font-size: 15px;
   font-family: 'Josefin Sans';
   text-transform: uppercase;
@@ -39,7 +42,10 @@ export default {
   border-radius: 2px;
 }
 
-.main__back-text:hover {
+.back {
+  cursor: pointer;
+}
+.back:hover {
   color: var(--red);
 }
 
@@ -50,29 +56,20 @@ export default {
 
 @media only screen and (max-width: 1035px) {
   .main__back-text {
-    margin-top: 36px;
-    margin-left: -48px;
+    width: 75%;
   }
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 1030px) {
   .main__back-text {
-    margin-top: 36px;
-    margin-left: -40px;
+    width: 70%;
   }
 }
 
-@media only screen and (max-width: 805px) {
+@media only screen and (max-width: 803px) {
   .main__back-text {
-    margin-top: 38px;
-    margin-left: -37px;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .main__back-text {
-    margin-top: 49px;
-    margin-left: -37px;
+    margin-top: 50px;
+    width: 87%;
   }
 }
 

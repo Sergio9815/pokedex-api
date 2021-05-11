@@ -2,6 +2,7 @@
   <main id="app">
     <pd-header />
     <router-view />
+    <div class="footer-decoration"></div>
   </main>
 </template>
 
@@ -90,5 +91,22 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: var(--blue-light);
   /* background-image: -webkit-linear-gradient(90deg,rgba(255, 255, 255, .2) 25%,transparent 25%,transparent 50%,rgba(255, 255, 255, .2) 50%,rgba(255, 255, 255, .2) 75%,transparent 75%,transparent) */
+}
+
+.footer-decoration {
+  height: 54px;
+  margin-top: -50px;
+  background: linear-gradient(
+    to bottom right,
+    transparent 50%,
+    var(--background) 51%
+  );
+}
+
+/* --- --- -- RESPONSIVE DESIGN -- --- --- */
+@media only screen and (max-width: 1035px) {
+  .footer-decoration {
+    margin-top: -65px;
+  }
 }
 </style>

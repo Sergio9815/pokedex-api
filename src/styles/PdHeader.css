@@ -16,6 +16,7 @@ a {
 .container__link {
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .container__title {

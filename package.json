@@ -23,6 +23,7 @@
     "@saeris/vue-spinners": "^1.0.8",
     "animate.css": "^4.1.1",
     "core-js": "^3.6.5",
+    "typewriter-effect": "^2.17.0",
     "vue": "^2.6.11",
     "vue-router": "^3.5.1",
     "vue-tippy": "^4.10.0"

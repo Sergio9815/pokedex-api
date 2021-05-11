@@ -138,10 +138,6 @@
   .content__pokemon-info {
     flex-direction: column-reverse;
     align-items: center;
-    width: 100%;
-  }
-  .content__pokemon-title {
-    width: 100%;
   }
 
   .title-poke {
@@ -149,7 +145,7 @@
   }
 
   .pokemon__data {
-    width: 60%;
+    width: 80%;
     margin-top: -30px;
   }
 }
@@ -160,4 +156,10 @@
     margin-top: -30px;
   }
 
+  .content__pokemon-info {
+    width: 100%;
+  }
+  .content__pokemon-title {
+    width: 100%;
+  }
 }

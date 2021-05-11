@@ -1,7 +1,6 @@
 <template>
   <article class="content">
     <section class="content__pokemon">
-      <!-- :class="colors ? colors : 'red' -->
       <div class="content__pokemon-title">
         <h1 class="title-poke">
           {{ pokemon[0] }}
@@ -10,7 +9,9 @@
       </div>
       <div class="content__pokemon-info">
         <div class="pokemon__data">
-          <p class="pokemon__data-description">{{ species[1].flavor_text }}</p>
+          <p id="desc" class="pokemon__data-description">
+            {{ species[1].flavor_text }}
+          </p>
           <div :class="colors ? colors : 'red'" class="pokemon__data-grid">
             <div>
               <h4 class="grid__text">Altura</h4>
@@ -30,7 +31,7 @@
             </div>
           </div>
         </div>
-        <figure class="pokemon__picture animate__animated animate__slideInUp">
+        <figure class="pokemon__picture animate__animated animate__bounceIn">
           <img class="pokemon__picture-img" :src="pokemon[6]" alt="" />
         </figure>
       </div>
@@ -39,6 +40,7 @@
 </template>
 
 <script>
+import Typewriter from 'typewriter-effect/dist/core'
 import utils from '@/utils'
 import 'animate.css'
 
@@ -58,6 +60,20 @@ export default {
 
   data() {
     return {}
+  },
+
+  mounted() {
+    var app = document.getElementById('desc')
+    var typewriter = new Typewriter(app, {
+      loop: false,
+      delay: 75,
+    })
+
+    typewriter
+      .pauseFor(500)
+      .typeString(this.species[1].flavor_text)
+      .pauseFor(300)
+      .start()
   },
 
   computed: {
