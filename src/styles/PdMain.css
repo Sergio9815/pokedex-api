@@ -78,8 +78,8 @@
 }
 
 .content__figure-img {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   cursor: pointer;
 }
 
@@ -108,8 +108,8 @@
   }
 
   .content__figure-img {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
 }
 
