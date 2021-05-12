@@ -44,10 +44,10 @@
               >
                 <option
                   :class="colors ? colors : 'red'"
-                  v-for="item in abilities"
-                  :key="item[0]"
+                  v-for="item in pokemon[2]"
+                  :key="item.ability.name"
                 >
-                  {{ item }}
+                  {{ item.ability.name }}
                 </option>
               </select>
             </div>
@@ -81,13 +81,7 @@ export default {
   },
 
   data() {
-    return {
-      abilities: [],
-    }
-  },
-
-  created() {
-    this.abilities = this.pokemon[7]
+    return {}
   },
 
   mounted() {

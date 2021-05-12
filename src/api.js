@@ -1,6 +1,5 @@
 const API = 'https://pokeapi.co/api/v2/pokemon/id'
 const SPECIES = 'https://pokeapi.co/api/v2/pokemon-species/id'
-let abilitiesArray = Array()
 
 const SPRITES =
   'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/id.png'
@@ -42,29 +41,6 @@ function getSpecies(id) {
     ])
 }
 
-function ability(url) {
-  return fetch(url)
-    .then((response) => response.json())
-    .then((response) => [
-      response.names.find(filterLanguage)
-        ? response.names.find(filterLanguage)
-        : response.names.find(filterLanguageEn),
-    ])
-}
-
-async function getAbilities(element) {
-  let results = Array()
-  for (let i = 0; i < element.length; i++) {
-    results[i] = await ability(element[i].ability.url)
-  }
-
-  for (let i = 0; i < results.length; i++) {
-    abilitiesArray[i] = results[i][0].name
-  }
-
-  return abilitiesArray
-}
-
 function getAssets(id) {
   let url = API.replace('id', `${id}`)
   return fetch(url)
@@ -72,12 +48,11 @@ function getAssets(id) {
     .then((response) => [
       response.name,
       response.id,
-      getAbilities(response.abilities),
+      response.abilities,
       response.height,
       response.weight,
       response.types,
       SPRITES.replace('id', `${response.id}`),
-      abilitiesArray,
     ])
 }
 
