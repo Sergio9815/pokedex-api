@@ -199,10 +199,10 @@
 
 @media only screen and (max-width: 500px) {
   .grid__text {
-    margin-left: 35px;
+    margin-left: 30px;
   }
   
   .grid__text-p {
-    margin-left: 35px;
+    margin-left: 30px;
   }
 }
