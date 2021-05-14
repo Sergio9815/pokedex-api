@@ -51,8 +51,8 @@
 .pokemon__data-description {
   text-align: justify;
   font-size: 1.2rem;
-  margin-top: -40px;
-  height: 60px;
+  margin-top: -20px;
+  height: 100%;
   color: var(--grey);
   font-family: 'Roboto', sans-serif;
 }
@@ -69,11 +69,11 @@
 .grid__text {
   text-align: justify;
   font-size: 18px;
-  margin-left: 30px;
+  margin-left: 35px;
 }
 
 .grid__text-p {
-  margin-left: 30px;
+  margin-left: 35px;
   font-size: 20px;
 }
 
@@ -171,7 +171,6 @@
 
   .pokemon__data-description {
     margin-top: 0;
-    height: 100%;
   }
 
   .grid__text {
@@ -195,14 +194,6 @@
   }
   .content__pokemon-title {
     width: 100%;
-  }
-
-  .grid__text {
-    margin-left: 60px;
-  }
-  
-  .grid__text-p {
-    margin-left: 60px;
   }
 }
 
