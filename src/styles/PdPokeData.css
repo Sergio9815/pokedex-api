@@ -87,6 +87,10 @@
   outline: none;
 }
 
+.no-select {
+  font-size: 17px;
+}
+
 .grid__text-abilities {
   display: flex;
   align-items: flex-start;

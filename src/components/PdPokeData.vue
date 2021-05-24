@@ -23,7 +23,11 @@
             </div>
             <div>
               <h4 class="grid__text">Tipo</h4>
+              <p v-if="pokemon[5].length === 1" class="grid__text-p no-select">
+                {{ pokemon[5][0].type.name | tr }}
+              </p>
               <select
+                v-if="pokemon[5].length > 1"
                 :class="colors ? colors : 'red'"
                 class="grid__text-p select"
               >
@@ -38,7 +42,11 @@
             </div>
             <div>
               <h4 class="grid__text">Habilidades</h4>
+              <p v-if="pokemon[2].length === 1" class="grid__text-p no-select">
+                {{ pokemon[2][0].ability.name }}
+              </p>
               <select
+                v-if="pokemon[2].length > 1"
                 :class="colors ? colors : 'red'"
                 class="grid__text-p select"
               >
