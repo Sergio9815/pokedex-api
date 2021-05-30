@@ -28,9 +28,9 @@ body {
     margin-bottom: 60px;
   }
 }
-
+/* 
 @media only screen and (max-width: 400px) {
   .main__content {
-    height: 100vh;
+    height: 90vh;
   }
-}
+} */
