@@ -106,7 +106,8 @@ body {
 /* --- --- -- RESPONSIVE DESIGN -- --- --- */
 @media only screen and (max-width: 1035px) {
   .footer-decoration {
-    margin-top: -65px;
+    display: none;
+    background-color: transparent;
   }
 }
 </style>

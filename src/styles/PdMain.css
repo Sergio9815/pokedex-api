@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  /* gap: 100px; */
 }
 
 .content__search-title {
@@ -71,15 +72,16 @@
 }
 
 .content__figure {
-  width: 300px;
+  width: 350px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .content__figure-img {
-  width: 350px;
-  height: 350px;
+  width: 110%;
+  height: 100%;  
   cursor: pointer;
 }
 
@@ -88,34 +90,32 @@
 }
 
 /* --- --- -- RESPONSIVE DESIGN -- --- --- */
-@media only screen and (max-width: 1030px) {
+
+@media only screen and (max-width: 980px) {
   .content {
-    width: 90%;
-    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-
-  .content__search {
-    width: 100%;
-  }
-
-  .content__figure {
-    width: 50%;
-  }
-
+  
   h3 {
     width: 90%;
     text-align: center;
   }
 
-  .content__figure-img {
-    width: 200px;
-    height: 200px;
+  .content__search {
+    width: 85%;
   }
+
+  .content__figure {
+    width: 250px;
+    height: 300px;
+  }
+
 }
 
-@media only screen and (max-width: 800px) {
-  .content {
-    flex-direction: column;
-    margin-top: 50px;
+@media only screen and (max-width: 400px) {
+  .content__search-title {
+    font-size: 25px;
   }
 }
