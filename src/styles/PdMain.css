@@ -99,23 +99,23 @@
   }
   
   h3 {
-    width: 90%;
+    width: 95%;
     text-align: center;
   }
 
+  .content__search-paragraph {
+    width: 95%;
+  }
+
   .content__search {
-    width: 85%;
+    width: 90%;
   }
 
   .content__figure {
     width: 250px;
     height: 300px;
+    margin-bottom: -20px;
   }
 
 }
 
-@media only screen and (max-width: 400px) {
-  .content__search-title {
-    font-size: 25px;
-  }
-}

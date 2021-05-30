@@ -23,7 +23,7 @@ body {
 
 @media only screen and (max-width: 1000px) {
   .main__content {
-    height: 95vh;
+    height: 90vh;
     margin-top: 40px;
     margin-bottom: 60px;
   }
@@ -31,6 +31,6 @@ body {
 
 @media only screen and (max-width: 400px) {
   .main__content {
-    height: 106vh;
+    height: 100vh;
   }
 }
