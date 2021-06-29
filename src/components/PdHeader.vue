@@ -22,14 +22,14 @@
         ><i class="fas fa-chevron-up down"></i
       ></a>
       <section class="btnS">
-        <pd-buttons />
+        <pd-buttons :ruta="ruta"/>
       </section>
     </nav>
     <section
       v-show="showSocial"
       class="socialbar animate__animated animate__fadeInDown"
     >
-      <pd-buttons />
+      <pd-buttons :ruta="ruta"/>
     </section>
   </div>
 </template>
@@ -41,6 +41,9 @@ import 'animate.css'
 export default {
   name: 'PdHeader',
   components: { PdButtons },
+  props: {
+    ruta: String,
+  },
   data() {
     return {
       title: 'Poke',
@@ -48,6 +51,7 @@ export default {
       showSocial: false,
     }
   },
+
   methods: {
     showMenu() {
       this.showSocial = !this.showSocial

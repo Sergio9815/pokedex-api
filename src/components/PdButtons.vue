@@ -1,9 +1,11 @@
 <template>
   <div class="container__buttons">
-    <a class="btn link" href=""
+    <router-link class="container__link" :to="{ name: 'home' }">
+      <a class="btn link" :class="ruta==='home'?'active':'off'"
       >HOME</a
-    >
-    <a class="btn link" href=""
+      >
+    </router-link>
+    <a class="btn link" :class="ruta==='pokemon'?'active':'off'"
       >POKEMONS</a
     >
     <a class="btn" href="https://github.com/Sergio9815/pokedex-api"
@@ -11,6 +13,14 @@
     >
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    ruta: String,
+  },
+}
+</script>
 
 <style scoped>
 @import '../styles/PdButtons.css';

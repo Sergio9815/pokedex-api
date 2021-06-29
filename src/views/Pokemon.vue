@@ -61,6 +61,9 @@ export default {
     this.pokemon.length === 0
       ? this.goToNotFound()
       : console.log('Petición exitosa!')
+
+    this.ruta = this.$route
+    this.$emit('homeActived', this.ruta.name)
   },
 
   methods: {

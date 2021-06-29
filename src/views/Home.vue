@@ -26,6 +26,12 @@ export default {
       pokemon: { name: '', url: '' },
     }
   },
+
+  updated() {
+    this.ruta = this.$route
+    this.$emit('homeActived', this.ruta.name)
+  },
+
   created() {
     this.isLoading = true
     document.title = 'PokeDex'

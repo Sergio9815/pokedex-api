@@ -44,7 +44,7 @@
 @media only screen and (max-width: 700px) {
     .container__buttons {
     flex-direction: column;
-    height: 80px;
+    height: 140px;
     margin-right: 0;
     margin-bottom: 15px;
   }
