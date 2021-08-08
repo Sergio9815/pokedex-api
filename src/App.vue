@@ -1,7 +1,7 @@
 <template>
   <main id="app">
-    <pd-header :ruta="ruta"/>
-    <router-view v-on:homeActived="active"/>
+    <pd-header :ruta="ruta" />
+    <router-view v-on:homeActived="active" />
     <div class="footer-decoration"></div>
   </main>
 </template>
@@ -12,17 +12,17 @@ import PdHeader from '@/components/PdHeader'
 export default {
   name: 'App',
   components: { PdHeader },
-  data(){
+  data() {
     return {
-      ruta: ''
+      ruta: '',
     }
   },
 
   methods: {
-    active(value){
+    active(value) {
       this.ruta = value
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -22,14 +22,14 @@
         ><i class="fas fa-chevron-up down"></i
       ></a>
       <section class="btnS">
-        <pd-buttons :ruta="ruta"/>
+        <pd-buttons :ruta="ruta" />
       </section>
     </nav>
     <section
       v-show="showSocial"
       class="socialbar animate__animated animate__fadeInDown"
     >
-      <pd-buttons :ruta="ruta"/>
+      <pd-buttons :ruta="ruta" />
     </section>
   </div>
 </template>

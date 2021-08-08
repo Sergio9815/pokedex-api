@@ -72,9 +72,7 @@ function getCharacters(id) {
 function getPokemons() {
   return fetch(POKEMOS)
     .then((response) => response.json())
-    .then((response) => [
-      response
-    ])
+    .then((response) => [response])
 }
 
 export default { getImage, getAssets, getSpecies, getPokemons, getCharacters }
