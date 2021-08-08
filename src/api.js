@@ -1,5 +1,6 @@
 const API = 'https://pokeapi.co/api/v2/pokemon/id'
 const SPECIES = 'https://pokeapi.co/api/v2/pokemon-species/id'
+const POKEMOS = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=9'
 
 const SPRITES =
   'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/id.png'
@@ -56,4 +57,24 @@ function getAssets(id) {
     ])
 }
 
-export default { getImage, getAssets, getSpecies }
+function getCharacters(id) {
+  let url = API.replace('id', `${id}`)
+  return fetch(url)
+    .then((response) => response.json())
+    .then((response) => [
+      response.name,
+      response.id,
+      response.types,
+      SPRITES.replace('id', `${response.id}`),
+    ])
+}
+
+function getPokemos() {
+  return fetch(POKEMOS)
+    .then((response) => response.json())
+    .then((response) => [
+      response
+    ])
+}
+
+export default { getImage, getAssets, getSpecies, getPokemos, getCharacters }
