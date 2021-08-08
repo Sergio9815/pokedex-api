@@ -69,7 +69,7 @@ function getCharacters(id) {
     ])
 }
 
-function getPokemos() {
+function getPokemons() {
   return fetch(POKEMOS)
     .then((response) => response.json())
     .then((response) => [
@@ -77,4 +77,4 @@ function getPokemos() {
     ])
 }
 
-export default { getImage, getAssets, getSpecies, getPokemos, getCharacters }
+export default { getImage, getAssets, getSpecies, getPokemons, getCharacters }
