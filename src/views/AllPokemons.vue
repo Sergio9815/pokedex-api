@@ -10,7 +10,7 @@
         :size="100"
         :width="150"
       />
-      <pd-characters v-if="!isLoading" :pokemon="pokemon" :species="species" />
+      <pd-characters v-if="!isLoading" :characters="characters" />
     </div>
   </section>
 </template>
@@ -28,51 +28,42 @@ export default {
   data() {
     return {
       isLoading: false,
-      pokemon: [],
-      species: [],
-      title: 'Pokémon | ',
-      type: '',
-      pokemonName: '',
+      allData: [],
+      characters: [],
     }
   },
 
   created() {
     this.isLoading = true
-    this.pokemonName = this.$route.params.id.toLowerCase()
 
     api
-      .getAssets(this.pokemonName)
-      .then((character) => {
-        this.pokemon = character
-        this.type = utils.getType(character[5][0].type.name)
-        document.title = this.title + this.pokemon[0] + this.type
+      .getPokemons()
+      .then((data) => {
+        this.allData = data
       })
       .finally(() => {
-        api
-          .getSpecies(this.pokemon[1])
-          .then((character) => {
-            this.species = character
-          })
-          .finally(() => (this.isLoading = false))
+        for (let i = 0; i < this.allData[0].results.length; i++) {
+          api
+            .getCharacters(this.allData[0].results[i].name)
+            .then((character) => {
+              this.characters[i] = character
+              this.characters[i].push(
+                utils.getTypeColor(this.characters[i][2][0].type.name)
+              )
+            })
+        }
       })
+      .finally(() => (this.isLoading = false))
   },
 
-  //updated() {
-  //  this.pokemon.length === 0
-  //    ? this.goToNotFound()
-  //    : console.log('Petición exitosa!')
-//
-  //  this.ruta = this.$route
-  //  this.$emit('homeActived', this.ruta.name)
-  //},
+  updated() {
+    this.ruta = this.$route
+    this.$emit('homeActived', this.ruta.name)
+  },
 
   methods: {
     goToHome() {
       this.$router.push({ name: 'home' })
-    },
-
-    goToNotFound() {
-      this.$router.push({ name: 'error' })
     },
   },
 }
