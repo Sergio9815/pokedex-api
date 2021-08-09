@@ -1,22 +1,22 @@
 const TYPES = [
-  { name: 'normal', icon: ' 🍥' },
-  { name: 'fire', icon: ' 🔥' },
-  { name: 'water', icon: ' 🌊' },
-  { name: 'grass', icon: ' 🍃' },
-  { name: 'electric', icon: ' ⚡' },
-  { name: 'ice', icon: ' ❄️' },
-  { name: 'poison', icon: ' 🧪' },
-  { name: 'fighting', icon: ' 🥊' },
-  { name: 'ground', icon: ' 🟤' },
-  { name: 'flying', icon: ' 🦅' },
-  { name: 'psychic', icon: ' 🔮' },
-  { name: 'bug', icon: ' 🐛' },
-  { name: 'ghost', icon: ' 👻' },
-  { name: 'dragon', icon: ' 🐲' },
-  { name: 'dark', icon: ' 💀' },
-  { name: 'fairy', icon: ' 🎆' },
-  { name: 'steel', icon: ' 🔩' },
-  { name: 'rock', icon: ' 🔘' },
+  { name: 'normal', icon: ' 🍥', color: 'gray' },
+  { name: 'fire', icon: ' 🔥', color: 'red' },
+  { name: 'water', icon: ' 🌊', color: 'blue' },
+  { name: 'grass', icon: ' 🍃', color: 'green' },
+  { name: 'electric', icon: ' ⚡', color: 'yellow' },
+  { name: 'ice', icon: ' ❄️', color: 'blue' },
+  { name: 'poison', icon: ' 🧪', color: 'purple' },
+  { name: 'fighting', icon: ' 🥊', color: 'red' },
+  { name: 'ground', icon: ' 🟤', color: 'brown' },
+  { name: 'flying', icon: ' 🦅', color: 'brown' },
+  { name: 'psychic', icon: ' 🔮', color: 'purple' },
+  { name: 'bug', icon: ' 🐛', color: 'green' },
+  { name: 'ghost', icon: ' 👻', color: 'gray' },
+  { name: 'dragon', icon: ' 🐲', color: 'pink' },
+  { name: 'dark', icon: ' 💀', color: 'gray' },
+  { name: 'fairy', icon: ' 🎆', color: 'pink' },
+  { name: 'steel', icon: ' 🔩', color: 'gray' },
+  { name: 'rock', icon: ' 🔘', color: 'gray' },
 ]
 
 const COLORS = [
@@ -42,4 +42,9 @@ function getColor(name) {
   return value
 }
 
-export default { getType, getColor }
+function getTypeColor(name) {
+  var value = TYPES.find((element) => element.name === name)
+  return value.color
+}
+
+export default { getType, getColor, getTypeColor }
