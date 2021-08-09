@@ -6,9 +6,7 @@
           {{ title }}
         </h1>
       </div>
-      <div class="content__pokemon-info">
-        
-      </div>
+      <div class="content__pokemon-info"></div>
     </section>
   </article>
 </template>
@@ -21,11 +19,7 @@ export default {
   name: 'PdCharacters',
 
   props: {
-    pokemon: {
-      type: Array,
-      default: () => [],
-    },
-    species: {
+    characters: {
       type: Array,
       default: () => [],
     },
@@ -33,7 +27,7 @@ export default {
 
   data() {
     return {
-      title: 'Pokemons List'
+      title: 'List Pokémons',
     }
   },
 
