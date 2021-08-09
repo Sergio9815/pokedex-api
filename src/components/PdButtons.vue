@@ -4,7 +4,7 @@
       <a class="btn link" :class="ruta === 'home' ? 'active' : 'off'">HOME</a>
     </router-link>
     <router-link class="container__link" :to="{ name: 'allpokemons' }">
-    <a class="btn link" :class="ruta === 'pokemon' ? 'active' : 'off'"
+    <a class="btn link" :class="ruta === 'allpokemons' ? 'active' : 'off'"
       >POKEMONS</a>    
     </router-link>
     <a class="btn" href="https://github.com/Sergio9815/pokedex-api"
