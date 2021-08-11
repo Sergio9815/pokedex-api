@@ -11,6 +11,8 @@
         :width="150"
       />
       <pd-characters v-if="!isLoading" :characters="characters" />
+      <button @click="back()" type="button">PREVIOUS</button>
+      <button @click="avanced()" type="button">NEXT</button>
     </div>
   </section>
 </template>
@@ -28,32 +30,16 @@ export default {
   data() {
     return {
       isLoading: false,
-      allData: [],
+      next: ' ',
+      previous: ' ',
+      results: [],
       characters: [],
     }
   },
 
   created() {
     this.isLoading = true
-
-    api
-      .getPokemons()
-      .then((data) => {
-        this.allData = data
-      })
-      .finally(() => {
-        for (let i = 0; i < this.allData[0].results.length; i++) {
-          api
-            .getCharacters(this.allData[0].results[i].name)
-            .then((character) => {
-              this.characters[i] = character
-              this.characters[i].push(
-                utils.getTypeColor(this.characters[i][2][0].type.name)
-              )
-            })
-        }
-      })
-      .finally(() => (this.isLoading = false))
+    this.getData()
   },
 
   updated() {
@@ -64,6 +50,47 @@ export default {
   methods: {
     goToHome() {
       this.$router.push({ name: 'home' })
+    },
+
+    getData(url) {
+      api
+        .getPokemons(url)
+        .then((data) => {
+          this.next = data[0]
+          this.previous = data[1]
+          this.results = data[2]
+        })
+        .finally(() => {
+          for (let i = 0; i < this.results.length; i++) {
+            api
+              .getCharacters(this.results[i].name)
+              .then((response) => {
+                this.characters[i] = response
+                this.characters[i].push(
+                  utils.getTypeColor(this.characters[i][2])
+                )
+              })
+              .finally(() => {
+                i === 8 ? (this.isLoading = false) : (this.isLoading = true)
+              })
+          }
+        })
+    },
+
+    avanced() {
+      this.isLoading = true
+      try {
+        this.getData(this.next)
+      } catch (error) {
+        this.getData()
+      }
+      this.isLoading = false
+    },
+
+    back() {
+      this.isLoading = true
+      this.getData(this.previous)
+      this.isLoading = false
     },
   },
 }
