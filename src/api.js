@@ -64,15 +64,15 @@ function getCharacters(id) {
     .then((response) => [
       response.name,
       response.id,
-      response.types,
+      response.types[0].type.name,
       SPRITES.replace('id', `${response.id}`),
     ])
 }
 
-function getPokemons() {
-  return fetch(POKEMOS)
+function getPokemons(url = POKEMOS) {
+  return fetch(url)
     .then((response) => response.json())
-    .then((response) => [response])
+    .then((response) => [response.next, response.previous, response.results])
 }
 
 export default { getImage, getAssets, getSpecies, getPokemons, getCharacters }
