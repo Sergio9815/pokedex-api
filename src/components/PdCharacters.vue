@@ -66,6 +66,8 @@ export default {
 <style scoped>
 @import '../styles/PdPokeData.css';
 
+/* --- --- -- MAIN CONTAINER -- --- --- */
+
 .poke-container {
   width: 100%;
   display: flex;
@@ -77,7 +79,11 @@ export default {
 
 .content__pokemon-info {
   width: 100%;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
+
+/* --- --- -- CONTAINERS FOR CHARACTER DATA -- --- --- */
 
 .poke-container__character {
   width: 300px;
@@ -130,12 +136,15 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 4px;
   letter-spacing: 3px;
 }
 
+/* --- --- -- RESPONSIVE DESIGN -- --- --- */
+
 @media only screen and (max-width: 980px) {
   .character__image {
-    width: 300px;
+    width: 280px;
   }
 }
 </style>
