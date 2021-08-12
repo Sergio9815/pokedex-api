@@ -1,6 +1,6 @@
 const API = 'https://pokeapi.co/api/v2/pokemon/id'
 const SPECIES = 'https://pokeapi.co/api/v2/pokemon-species/id'
-const POKEMOS = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=9'
+const POKEMOS = 'https://pokeapi.co/api/v2/pokemon?limit=15&offset=0'
 
 const SPRITES =
   'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/id.png'
