@@ -59,7 +59,7 @@ export default {
     width: 75%;
   }
 }
-
+/* 
 @media only screen and (max-width: 1030px) {
   .main__back-text {
     width: 70%;
@@ -71,7 +71,7 @@ export default {
     margin-top: 50px;
     width: 87%;
   }
-}
+} */
 
 @media only screen and (max-width: 700px) {
   .main__back-text {
